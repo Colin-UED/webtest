@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#container{
+			width: 400px;
+			height: 500px;
+			background: #ccc;
+			overflow: hidden;
+			position: relative;
+		}
+		#content{
+			width: 380px;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		#scroll-wrap{
+			width: 20px;
+			height: 500px;
+			position: absolute;
+			right: 0;
+			top: 0;
+			background: #ddd;
+		}
+		#scroll-btn{
+			width: 20px;
+			height: 20px;
+			background: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="content">
+			11这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字这是文字22
+		</div>
+		
+		<div id="scroll-wrap">
+			<div id="scroll-btn"></div>
+		</div>
+	</div>
+
+	<script>
+		var oContainer = document.getElementById('container');
+		var oContent = document.getElementById('content');
+		var oScrollBtn = document.getElementById('scroll-btn');
+		oScrollBtn.onmousedown = function(e){
+			e = e || window.event;
+			var iDisY = e.clientY - oScrollBtn.offsetTop;
+			document.onmousemove = function(e){
+				e = e || window.event;
+				var iTop = e.clientY - iDisY - oContainer.offsetTop;
+				if(iTop < 0){
+					iTop = 0;
+				}
+				if(iTop > oContainer.offsetHeight - oScrollBtn.offsetHeight){
+					iTop = oContainer.offsetHeight - oScrollBtn.offsetHeight;
+				}
+				var fScale = iTop / (oContainer.offsetHeight - oScrollBtn.offsetHeight);
+
+				oScrollBtn.style.top = iTop + 'px';
+				oContent.style.top = -(oContent.offsetHeight - oContainer.offsetHeight) * fScale + 'px';
+				return false;
+			};
+			document.onmouseup = function(){
+				document.onmousemove = null;
+			};
+		};
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

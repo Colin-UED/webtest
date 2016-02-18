@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		#container{
+			width: 400px;
+			height: 200px;
+			border: 1px solid #ddd;
+			margin: 50px auto;
+			overflow: hidden;
+			position: relative;
+		}
+		#imgs{
+			/*width: 560px;*/
+			height: 120px;
+			position: absolute;
+		}
+		#imgs li{
+			width: 120px;
+			height: 120px;
+			margin-right: 20px;
+			background: #000;
+			color: #fff;
+			text-align: center;
+			line-height: 120px;
+			font-size: 48px;
+			float: left;
+		}
+		#arrows{
+			height: 30px;
+			text-align: center;
+			position: absolute;
+			left: 50%;
+			margin-left: -85px;
+			bottom: 20px;
+		}
+		#arrows span{
+			background: #ccc;
+			width: 80px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			float: left;
+			/*display: inline-block;*/
+			margin-right: 10px;
+
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="container">
+		<ul id="imgs">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<div id="arrows">
+			<span id="prev">&lt;&lt;向左</span>
+			<span id="next" style="margin-right: 0;">向右&gt;&gt;</span>
+		</div>
+	</div>
+
+	<script>
+		//1. 复制#imgs中的图片
+		var oImgs = document.getElementById('imgs');
+		var oPrev = document.getElementById('prev');
+		var oNext = document.getElementById('next');
+		var speed = 2;
+		oImgs.innerHTML += oImgs.innerHTML;
+
+		//2. 设置#imgs的宽度
+		var aLi = oImgs.getElementsByTagName('li');
+		oImgs.style.width = aLi.length * (aLi[0].offsetWidth + 20) + 'px';
+
+		//3. 移动#imgs
+		setInterval(function(){
+			oImgs.style.left = (oImgs.offsetLeft + speed) + 'px';
+			if(oImgs.offsetLeft <= -oImgs.offsetWidth/2){
+				oImgs.style.left = 0;
+			}
+			if(oImgs.offsetLeft > 0){
+				oImgs.style.left = -oImgs.offsetWidth/2 + 'px';
+			}
+		}, 30);
+		//console.log(oImgs.innerHTML);
+
+		oPrev.onmouseover = oNext.onmouseover = function(){
+			if(this == oPrev){
+				speed = -2;
+			}else{
+				speed = 2;
+			}
+		};
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

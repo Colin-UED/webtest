@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+	
+		#menu > li{
+			height: 30px;
+			width: 200px;
+			background: #ccc;
+			margin-bottom: 2px;
+			cursor: pointer;
+			position: relative;
+		}
+
+		#menu .level2{
+			border: 1px solid #000;
+			display: none;
+			position: absolute;
+			right: -150px;
+			top: 0;
+
+		}
+		#menu .level2 li{
+			width: 150px;
+			background: #eee;
+			margin-bottom: 1px;
+
+		}
+	</style>
+</head>
+<body>
+	<ul id="menu">
+		<li>
+			<a href="#">subitem 1</a>
+			<ul class="level2">
+				<li>menu 1</li>
+				<li>menu 2</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">subitem 2</a>
+			<ul class="level2">
+				<li>menu 1</li>
+				<li>menu 2</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">subitem 3</a>
+			<ul class="level2">
+				<li>menu 1</li>
+				<li>menu 2</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">subitem 4</a>
+			<ul class="level2">
+				<li>menu 1</li>
+				<li>menu 2</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

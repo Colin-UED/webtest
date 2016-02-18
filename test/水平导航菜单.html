@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		#l1 .l1-item{
+			width: 120px;
+			height: 30px;
+			float: left;
+			margin-right: 5px;
+			background: #fff url(arrow.jpg) no-repeat right 10px;
+			text-align: center;
+			line-height: 30px;
+			border: 1px solid red;
+			cursor: pointer;
+		}
+		#l1 .l2{
+			border: 1px solid #ccc;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="nav">
+		<ul id="l1">
+			<li class="l1-item">
+				item 11
+				<ul class="l2">
+					<li>item 1</li>
+					<li>item 2</li>
+					<li>item 3</li>
+				</ul>
+			</li>
+			<li class="l1-item">item 22
+				<ul class="l2">
+					<li>item 1</li>
+					<li>item 2</li>
+					<li>item 3</li>
+				</ul>
+			</li>
+			<li class="l1-item">item 33
+				<ul class="l2">
+					<li>item 1</li>
+					<li>item 2</li>
+					<li>item 3</li>
+				</ul>
+			</li>
+			<li class="l1-item">item 44
+				<ul class="l2">
+					<li>item 1</li>
+					<li>item 2</li>
+					<li>item 3</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+
+	<script>
+		var oL1 = document.getElementById('l1');
+		var aLi = oL1.children;//oL1.getElementsByTagName('li');
+		for(var i=0; i<aLi.length; i++){
+			// if(aLi[i].className == "l1-item"){
+				aLi[i].onmouseover = function(){
+					var oL2 = this.getElementsByTagName('ul')[0];
+					oL2.style.display = 'block';
+					// this.style.backgroundPosition = 'right -10px';
+				};
+				aLi[i].onmouseout = function(){
+					var oL2 = this.getElementsByTagName('ul')[0];
+					oL2.style.display = 'none';
+					// this.style.backgroundPosition = 'right 10px';
+
+				};
+			// }
+		}
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

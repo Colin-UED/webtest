@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		#container{
+			width: 200px;
+		}
+		#level1 h4{
+			background: #000;
+			color: #fff;
+
+		}
+		#level1 .level2{
+			border: 1px solid #000;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<ul id="level1">
+			<li>
+				<h4>管理区</h4>
+				<ul class="level2" >
+					<li>11</li>
+					<li>22</li>
+					<li>33</li>
+				</ul>
+			</li>
+			<li>
+				<h4>交流区</h4>
+				<ul class="level2">
+					<li>44</li>
+					<li>55</li>
+					<li>66</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	<script>
+		var oLevel1 = document.getElementById('level1');
+		var aH4 = oLevel1.getElementsByTagName('h4');
+		var aLevel2 = oLevel1.getElementsByTagName('ul');
+		//var bFlag = false;//一个标识位，false代表隐藏，true代表显示
+		for(var i=0; i<aH4.length; i++){
+			aH4[i].show = false;
+			aH4[i].index = i;
+			aH4[i].onclick = function(){
+				// alert(aLevel2[this.index].style.display);
+				/*if(aLevel2[this.index].style.display == 'none'){
+					aLevel2[this.index].style.display = 'block';
+				}else{
+					aLevel2[this.index].style.display = 'none';
+				}*/
+				if(this.show){
+					aLevel2[this.index].style.display = 'none';
+				}else{
+					aLevel2[this.index].style.display = 'block';
+				}
+				this.show = !this.show;
+			};
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

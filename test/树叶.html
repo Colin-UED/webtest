@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		function Leaf(){
+
+			this.width=parseInt(Math.random()*50+30);
+			this.height=this.width;
+			this.pos ={
+				top:0,
+				left:parseInt(Math.random()*(document.documentElement.clientWidth-this.width))};
+			this.speed=parseInt(Math.random()*40+10);
+			this.fallTime =parseInt(Math.random()*900+100);
+			this.oDiv = document.createElement("div");
+			this.oDiv.style.backgroundColor = "green";
+			
+			this.oDiv.style.left = this.pos.left+'px';
+			this.oDiv.style.top= this.pos.top+'px';
+
+			this.oDiv.style.width=this.width+'px';
+			this.oDiv.style.height=this.height+'px';
+			document.body.appendChild(this.oDiv);
+
+		}
+		Leaf.prototype.fall = function(){
+			var that= this;
+				
+			setInterval(function(){
+				that.oDiv.style.top =that.oDiv.offsetTop+3+'px';
+			},this.speed);
+
+		};
+
+		for (var i = 0; i <50; i++) {
+			var leaf = new Leaf();
+			(function(leaf){
+				setTimeout(function(){
+				leaf.fall();
+			},leaf.fallTime);
+			})(leaf);
+			
+
+		};
+	</script>
+</body>
+</html>
