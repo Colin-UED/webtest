@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试event里的对象</title>
+</head>
+<body>
+    <div class="colin"></div>
+    <button>点击获取</button>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+    $("button").click(function(e){
+        var colin = $(".colin");
+        colin.append("type:"+e.type+"<br>");
+        colin.append("target:"+e.target+"<br>");
+        colin.append("dat:"+e.dat+"<br>");
+        colin.append("relatedTarget:"+e.relatedTarget+"<br>");
+        colin.append("currentTarget:"+e.currentTarget+"<br>");
+        colin.append("pageX:"+e.pageX+"<br>");
+        colin.append("pageY:"+e.pageY+"<br>");
+        colin.append("screenX:"+e.screenX+"<br>");
+        colin.append("screenY:"+e.screenY+"<br>");
+        colin.append("clientX:"+e.clientX+"<br>");
+        colin.append("clientY:"+e.clientY+"<br>");
+        colin.append("result:"+e.result+"<br>");
+        colin.append("timeStamp:"+e.timeStamp+"<br>");
+        console.log(e.type);
+        console.log(e.target);
+        console.log(e.dat);
+        console.log(e.relatedTarget);
+        console.log(e.currentTarget);
+        console.log(e.pageX);
+        console.log(e.pageY);
+        console.log(e.screenX);
+        console.log(e.screenY);
+        console.log(e.clientX);
+        console.log(e.clientY);
+        console.log(e.result);
+        console.log(e.timeStamp);
+    });
+</script>
+</body>
+</html>

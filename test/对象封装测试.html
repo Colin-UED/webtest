@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象封装测试</title>
+    <style type="text/css">
+        .yaoma {
+            width: 200px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+    (function(){
+        var send = {
+            name : function(name){
+                alert("hello"+name);
+            },
+            age : function(age){
+                alert("I age"+age);
+            }
+        };
+
+        console.log(send);
+    })(jQuery);
+</script>
+</body>
+</html>

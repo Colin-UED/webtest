@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS模块式开发</title>
+
+</head>
+<body>
+<script type="text/javascript">
+    function Schedule( lectures ) {
+        this.lectures = lectures;
+    }
+    Schedule.prototype.display = function(){
+        var str = "";
+        for ( var i = 0; i < this.lectures.length; i++ ){
+            str += this.lectures[i].display() + " "; return str;
+        }
+        return str;
+    };
+    Schedule.prototype.init = function(){
+        this.display();
+    };
+    var xiaoming = new Schedule();
+    xiaoming.init();
+</script>
+</body>
+</html>

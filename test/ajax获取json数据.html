@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax获取json数据</title>
+    <style type="text/css">
+        .yaoma {
+            width: 200px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="yaoma">
+    <div class="data" style="height:300px;"></div>
+    <button>获取内容</button>
+</div>
+
+<div class="yaoma">
+    <div class="data" style="height:300px;"></div>
+    <button>获取内容</button>
+</div>
+<div class="yaoma">
+    <div class="data" style="height:300px;"></div>
+    <button>获取内容</button>
+</div>
+<div class="yaoma">
+    <div class="data" style="height:300px;"></div>
+    <button>获取内容</button>
+</div>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).on("click", "button", function () {
+        var sib = $(this).siblings(".data");
+        $.ajax({
+            type: "GET",
+            url: "data.json",
+            dataType: "json",
+            data: {"page": 1, "num": 10},
+            contentType: "application/json; charset=utf-8",
+            beforeSend: function () {
+                // 禁用按钮防止重复提交 加载中
+                $("#submit").attr({ disabled: "disabled" });
+            },
+            complete: function(){
+                // 加载完成
+            },
+            success: function (data) {
+//                if (data.success===1000) {
+                    var content = "";
+                    $.each(data, function (i, n) {  //遍历数据(i:键)(n:值)
+                        console.log(n);
+                        content += "<p>" + n["optionKey"] + "/" + n["optionValue"] + "</p>";
+                    });
+                    sib.append(content);
+//                } else {
+//                    alert("失败");
+//                }
+            },
+            error: function (errs) { //无法连接错误提示
+                alert(errs.responseText);
+                return false;
+            }
+        });
+    });
+</script>
+</body>
+</html>

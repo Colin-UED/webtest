@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS模块式开发</title>
+    <style type="text/css">
+        html,body{
+            height:100px;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="mark" style="width:100%;height:100%;font-size:60px;background: #FFF;position: fixed;top: 0;left: 0;text-align: center;line-height: 600px;">
+加载中。。。
+</div>
+<img src="https://drscdn.500px.org/photo/60701250/m%3D2048/bff3ba8ab4848e205b7d56eb6aa4612e"/>
+<img src="https://drscdn.500px.org/photo/62164963/m%3D2048/3291568ad370b6f56a6b5c47adecbebd"/>
+<img src="https://drscdn.500px.org/photo/42998730/m%3D2048/b6afbbf236b0a316736f649f48dd2ae7"/>
+<img src="https://drscdn.500px.org/photo/54745066/m%3D2048/30e6949a25d774f0808ef90bb452d167"/>
+<button class="loads">内容加载</button>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+    $(window).load(function(){
+        $("#mark").hide();
+    });
+    //构造函数模式
+//    var GetUp = function(){
+//        this.name = "leiFei1";
+//    };
+//    GetUp.prototype.wear = function(){
+//        console.log(this.name+"穿NB系列的衣服");
+//    };
+//    GetUp.prototype.brush = function(){
+//        console.log(this.name+"洗脸刷牙");
+//    };
+//    GetUp.prototype.sortOut = function(){
+//        console.log(this.name+"整理书包");
+//    };
+//    GetUp.prototype.out = function(){
+//        console.log(this.name+"出门");
+//    };
+//    GetUp.prototype.init = function(){
+//        this.wear();
+//        this.brush();
+//        this.sortOut();
+//        this.out();
+//    };
+//    var xiaoming = new GetUp();
+//    xiaoming.init();
+
+    //对象构造函数
+//    var GetUp = function(){};
+//    GetUp.prototype = {
+//        name : "leiFei",
+//        wear : function(){
+//            console.log(this.name+"穿NB系列的衣服");
+//        },
+//        brush : function(){
+//            console.log(this.name+"洗脸刷牙");
+//        },
+//        sortOut : function(){
+//            console.log(this.name+"整理书包");
+//        },
+//        out : function(){
+//            console.log(this.name+"出门");
+//        },
+//        init : function(){
+//            this.wear();
+//            this.brush();
+//            this.sortOut();
+//            this.out();
+//        }
+//    };
+//    var xiaoming = new GetUp();
+//    xiaoming.init();
+
+    //    var GetUp = {
+    //        wear : function(){
+    //            console.log("穿NB系列的衣服");
+    //        },
+    //        brush : function(){
+    //            console.log("洗脸刷牙");
+    //        },
+    //        sortOut : function(){
+    //            console.log("整理书包");
+    //        },
+    //        out : function(){
+    //            console.log("出门");
+    //        }
+    //    };
+    //    console.log(GetUp);
+    //    GetUp.wear();
+    //    GetUp.brush();
+    //    GetUp.sortOut();
+    //    GetUp.out();
+
+
+    //模块化开发
+    //
+    //require(['model'], function (model){
+    //    console.log(model.add(".loads"));
+    //});
+
+</script>
+</body>
+</html>

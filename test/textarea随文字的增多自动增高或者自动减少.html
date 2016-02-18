@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>textarea随文字的增多自动增高或者自动减少</title>
+    <style type="text/css">
+        textarea{
+            width:300px;
+            overflow: hidden;
+            font-style: normal;
+            font-size: 13px;
+            line-height: normal;
+            resize: none;
+            outline:none;
+        }
+    </style>
+</head>
+<body>
+<textarea style="" rows="1" cols="30" onfocus="javascript:ResizeTextarea(this,1);" onclick="javascript:ResizeTextarea(this,1);" onkeyup="javascript:ResizeTextarea(this,1);"></textarea>
+
+<script type="text/javascript">
+    var agt = navigator.userAgent.toLowerCase();
+    var is_op = (agt.indexOf("opera") != -1);
+    var is_ie = (agt.indexOf("msie") != -1) && document.all && !is_op;
+    function ResizeTextarea(a,row){
+        if(!a){return}
+        if(!row)
+            row=5;
+        var b=a.value.split("\n");
+        var c=is_ie?1:0;
+        c+=b.length;
+        var d=a.cols;
+        if(d<=20){d=40}
+        for(var e=0;e<b.length;e++){
+            if(b[e].length>=d){
+                c+=Math.ceil(b[e].length/d)
+            }
+        }
+        c=Math.max(c,row);
+        if(c!=a.rows){
+            a.rows=c;
+        }
+    }
+</script>
+</body>
+</html>

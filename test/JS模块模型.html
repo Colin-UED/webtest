@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS模块式开发</title>
+
+</head>
+<body>
+<button class="loads">内容加载</button>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+    //    var GetUp = function(){};
+    //    GetUp.prototype.wear = function(){   //写出方法，需要子类自己定义
+    //        throw "穿衣服需要子类自定义";
+    //    };
+    //    GetUp.prototype.brush = function(){
+    //        console.log("洗脸刷牙");
+    //    };
+    //    GetUp.prototype.sortOut = function(){  //子类自定义方法
+    //        throw "出门准备工作需要子类自定义";
+    //    };
+    //    GetUp.prototype.out = function(){
+    //        console.log("出门");
+    //    };
+    //    GetUp.prototype.needBrush = function(){  //是否需要刷牙，默认为需要
+    //        return  true;
+    //    };
+    //    GetUp.prototype.init = function(){
+    //        this.wear();
+    //        if(this.needBrush())this.brush();
+    //        this.sortOut();
+    //        this.out();
+    //    };
+    //    var xiaoMing = new GetUp();
+    //    xiaoMing.wear = function(){
+    //        console.log("穿阿迪吊丝的衣服");
+    //    };
+    //    xiaoMing.sortOut = function(){
+    //        console.log("整理文件，找工作");
+    //    };
+    //    xiaoMing.needBrush = function(){return false;};
+    //    xiaoMing.init();
+
+    //------------------------------------------------------------------
+
+//    var GetUp = function (person) {
+//        var wear = person.wear || function () {
+//            throw "穿衣服需要子类自定义";
+//        };
+//        var brush = function () {
+//            console.log("洗脸刷牙");
+//        };
+//        var sortOut = person.sortOut || function () {
+//            throw "出门准备工作需要子类自定义";
+//        };
+//        var needBrush = person.needBrush || function () {
+//            return true;
+//        };
+//        var out = function () {
+//            console.log("出门");
+//        };
+//        var init = function () {
+//            wear();
+//            if (needBrush()) brush();
+//            sortOut();
+//            out();
+//        };
+//        return function () {
+//            init();
+//        };
+//    };
+//    var jimmy = {
+//        wear(){
+//            console.log("穿鸟不拉屎的衣服");
+//        },
+//        sortOut(){
+//            console.log('整理书包');
+//        }
+//    }
+//    var _jimmy = GetUp(jimmy);
+//    _jimmy();
+
+
+    //构造函数封装到对象
+    //    var GetUp = function(){};
+    //    GetUp.prototype.load = "loads";
+    //    GetUp.prototype.wear = function(){
+    ////        console.log(i);
+    //        $("."+this.load).click(function(){
+    //            console.log("leifei");
+    //        });
+    //    };
+    //    GetUp.prototype.brush = function(){
+    //        console.log("洗脸刷牙");
+    //    };
+    //    GetUp.prototype.sortOut = function(){
+    //        console.log("整理书包");
+    //    };
+    //    GetUp.prototype.out = function(){
+    //        console.log("出门");
+    //    };
+    //    var xiaoming = new GetUp();
+    //    xiaoming.wear();
+    //    console.log(xiaoming);
+
+    //    function allPrpos(one) {
+    //        var props = "";
+    //        for (var p in one ){
+    //            if (typeof(one[p]) == "function"){
+    //                one[p]();
+    //            } else {
+    //                props += p + " = " + one[p] + "\t" ;
+    //            }
+    //        }
+    //        console.log(props);
+    //    }
+    //    allPrpos(xiaoming);
+
+
+    //    var GetUp = {
+    //        wear : function(){
+    //            console.log("穿NB系列的衣服");
+    //        },
+    //        brush : function(){
+    //            console.log("洗脸刷牙");
+    //        },
+    //        sortOut : function(){
+    //            console.log("整理书包");
+    //        },
+    //        out : function(){
+    //            console.log("出门");
+    //        }
+    //    };
+    //    console.log(GetUp);
+    //    GetUp.wear();
+    //    GetUp.brush();
+    //    GetUp.sortOut();
+    //    GetUp.out();
+
+
+    //模块化开发
+    //
+    //require(['model'], function (model){
+    //    console.log(model.add(".loads"));
+    //});
+
+</script>
+</body>
+</html>
