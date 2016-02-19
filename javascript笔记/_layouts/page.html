@@ -1,0 +1,57 @@
+{% include pagehead.html %}
+{% include header.html %}
+
+<article class="bookPage">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1> {{ page.title }} </h1>
+
+<aside class="right"><p>来自<a href="/">《{{ site.sitename }}》</a>，by 阮一峰</p></aside>
+
+{% include toc.html %}
+
+{{ content }}
+
+</article>
+
+<div class="row">
+    <div class="twelve columns">
+
+<sectioni id="feature">
+
+<h2>功能链接</h2>
+
+<ul>
+
+	<li><a href="https://github.com/ruanyf/jstutorial/issues">论坛</a></li>
+	<li><a href="https://raw.github.com/ruanyf/jstutorial/gh-pages{{ page.url | split:"." | first }}.md">Markdown源码</a></li>
+	<li><a href="https://github.com/ruanyf/jstutorial/commits/gh-pages{{ page.url | split:"." | first }}.md">修订历史</a></li>
+
+</ul>
+
+<h2>留言</h2>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jstutorial'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+</div>
+</div>
+
+{% include footer.html %}
+

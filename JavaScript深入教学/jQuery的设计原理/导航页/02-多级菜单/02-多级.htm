@@ -1,0 +1,101 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul, li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    #navmenu {
+        width: 950px;
+        height: 25px;
+        position: relative;
+        left: 50%;
+        margin-left: -475px;
+        background: orange;
+        margin-top: 25px;
+        font-size: 0;
+    }
+
+    #navmenu li {
+        display: inline-block;
+        margin: 0;
+        height: 25px;
+        line-height: 25px;
+        font-size: 16px;
+        padding: 0 10px;
+        position: relative;
+
+    }
+
+    #navmenu li a {
+        display: block;
+    }
+    #navmenu li ul {
+        position: absolute;
+        top: 25px;
+        left: 0;
+        background: lightblue;
+    }
+    #navmenu li ul{
+        display: none;
+    }
+    #navmenu li ul li {
+        display: block;
+    }
+    #navmenu li ul li ul {
+        position: absolute;
+        left: 100px;
+        top: 0;
+        display: none;
+    }
+    /*第二级菜单的hover事件*/
+    #navmenu li:hover{
+        background: olive;
+    }
+    #navmenu li:hover ul{
+        display: block;
+    }
+    #navmenu li:hover ul li ul{
+        display: none;
+    }
+    /*第三级菜单的hover事件*/
+    #navmenu li ul li:hover ul{
+        display: block;
+    }
+
+</style>
+<body>
+<ul id="navmenu">
+    <li><a href="#">朱安邦</a></li>
+    <li><a href="#">课程大厅</a></li>
+    <li><a href="#">学习中心 +</a>
+        <ul>
+            <li><a href="#">前端课程 +</a>
+                <ul>
+                    <li><a href="#">javascript</a></li>
+                    <li><a href="#">css</a></li>
+                    <li><a href="#">jquery</a></li>
+                </ul>
+            </li>
+            <li><a href="#">手机开发</a></li>
+            <li><a href="#">后台编程</a></li>
+        </ul>
+    </li>
+    <li><a href="#">关于我们</a></li>
+</ul>
+</body>
+</html>

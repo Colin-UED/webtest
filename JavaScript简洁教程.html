@@ -1,0 +1,2813 @@
+			<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  	<title>JavaScript单页教程_V1.0</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<style>
+		        body {
+            color: #666666;
+            font-family: 微软雅黑,Verdana,sans-serif,宋体;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: #999999;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #16B28F;
+        }
+        .sin_navi ul {
+            list-style: none outside none;
+            margin: 0;
+            padding: 0 0 0 10px;
+        }
+        .sin_navi ul li {
+            line-height: 30px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        li {
+            line-height: 24px;
+        }
+        table {
+            border-left: 1px solid #CCCCCC;
+            border-top: 1px solid #CCCCCC;
+            margin: 5px 10px;
+            text-align: left;
+            width: 678px;
+        }
+        table th {
+            background-color: #EEEEEE;
+            border-bottom: 1px solid #CCCCCC;
+            border-right: 1px solid #CCCCCC;
+            padding: 10px;
+        }
+        table td {
+            border-bottom: 1px solid #CCCCCC;
+            border-right: 1px solid #CCCCCC;
+        }
+        p {
+            line-height: 24px;
+            margin: 10px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #111111;
+            font-weight: normal;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 26px;
+        }
+        h2 {
+            border-bottom: 1px dashed #CCCCCC;
+            font-size: 24px;
+            padding: 10px 0;
+        }
+        h3 {
+            font-size: 20px;
+            padding: 8px 0;
+        }
+        h4 {
+            font-size: 18px;
+            margin-left: 10px;
+            padding: 5px 0;
+        }
+        h5 {
+            font-size: 16px;
+            margin-left: 10px;
+            padding: 5px 0;
+        }
+        h6 {
+            font-size: 16px;
+            margin-left: 10px;
+            padding: 5px 0;
+        }
+        blockquote {
+            background: url("../../../img/blockquote.gif") no-repeat scroll left top #F4F5F7;
+            margin: 5px 10px;
+            padding: 10px 10px 10px 30px;
+        }
+        pre {
+            background: none repeat scroll 0 0 #EEEEEE;
+            margin: 5px 10px;
+            padding: 10px;
+        }
+        .sin_callout {
+            margin: 5px 10px;
+        }
+        .sin_header {
+            background-color: #F7F7F7;
+            border-bottom: 1px solid #CCCCCC;
+            height: 80px;
+            width: 100%;
+        }
+        .sin_title {
+            margin: 0 auto;
+            width: 1000px;
+        }
+        .sin_title_text {
+            color: #000000;
+            float: left;
+            line-height: 80px;
+        }
+        .sin_version {
+            color: #999999;
+            float: left;
+            font-size: 14px;
+            padding-top: 25px;
+            margin-left: 10px;
+        }
+        .sin_main {
+            margin: 0 auto;
+            width: 1000px;
+        }
+        .sin_navi {
+            float: left;
+            margin-bottom: 20px;
+            overflow-y: scroll;
+            padding: 0;
+            position: relative;
+            width: 279px;
+            z-index: 1;
+        }
+        .sin_navi_nomove {
+            position: fixed;
+            top: 0;
+        }
+        .sin_navi_ca a {
+            color: #333333;
+        }
+        .sin_navi_ca a:hover {
+            color: #16B28F;
+        }
+        .sin_navi_current {
+            border-right: 3px solid #16B28F;
+        }
+        .sin_navi_current a {
+            color: #16B28F;
+        }
+        .sin_content {
+            background-color: #FFFFFF;
+            border-left: 1px solid #CCCCCC;
+            float: left;
+            margin-left: -20px;
+            padding: 10px 20px;
+            position: relative;
+            width: 699px;
+            z-index: 2;
+        }
+        .sin_content_mar {
+            margin-left: 259px;
+        }
+        .sin_footer {
+            border-top: 1px solid #CCCCCC;
+            color: #999999;
+            height: 80px;
+            line-height: 80px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .sin_info {
+            background: none repeat scroll 0 0 #FFFFCC;
+            border: 1px solid #D5D4D4;
+            border-radius: 4px 4px 4px 4px;
+            color: #999999;
+            margin: 10px 0;
+            padding: 14px;
+        }
+        .sin_link_logo {
+            color: #16B28F;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        .sin_text {
+            margin-bottom: 10px;
+        }
+        .d_callout {
+            margin-bottom: 10px;
+        }
+        .d_callout_info {
+            background: none repeat scroll 0 0 #F4F8FA;
+            border-left: 4px solid #5BC0DE;
+            padding: 10px;
+        }
+        .d_callout_warn {
+            background: none repeat scroll 0 0 #FCF8F2;
+            border-left: 4px solid #F0AD4E;
+            padding: 10px;
+        }
+        .d_callout_danger {
+            background: none repeat scroll 0 0 #FDF7F7;
+            border-left: 4px solid #D9534F;
+            padding: 10px;
+        }
+        .d_callout_success {
+            background: none repeat scroll 0 0 #F3F8F3;
+            border-left: 4px solid #50AF51;
+            padding: 10px;
+        }
+        .d_callout input {
+            background-color: rgba(0, 0, 0, 0);
+            font-size: 15px;
+            margin-bottom: 5px;
+            padding: 10px 5px 0 10px;
+        }
+        .d_callout textarea {
+            background-color: rgba(0, 0, 0, 0);
+        }
+        .d_callout_icons a {
+            color: #AAAAAA;
+            margin-left: 10px;
+        }
+        a.d_callout_icon_info {
+            color: #5BC0DE;
+        }
+        a.d_callout_icon_warn {
+            color: #F0AD4E;
+        }
+        a.d_callout_icon_danger {
+            color: #D9534F;
+        }
+        a.d_callout_icon_success {
+            color: #50AF51;
+        }
+        .clear {
+            clear: both;
+        }
+
+	</style>
+</head>
+<body>
+	<div class="sin_header">
+		<div class="sin_title">
+			<h1 class="sin_title_text">JavaScript单页教程</h1>
+			<span class="sin_version">V1.0</span>
+			<div class="clear"></div>
+		</div>
+		<div id="top_end"></div>
+	</div>
+	<div class="sin_main">
+		<div class="sin_navi" id="sin_navi_id">
+			<ul style="margin: 20px 0;">
+				    																																													<li style="width: 246px;" id="navi_text_64522">
+									<a href="#text_64522">
+										JavaScript入门教程
+									</a>	
+								</li>
+																																															<li style="width: 246px;" id="navi_text_64523">
+									<a href="#text_64523">
+										JavaScript入门教程
+									</a>	
+								</li>
+																									</ul>
+		</div>
+		<div class="sin_content" id="sin_content_id">
+																													<h2 id="text_64522" class="sin_target">JavaScript入门教程</h2>
+<div class="sin_text">
+    					<p>—<br>layout:default title: JavaScript简易教程</p> 
+<h2>version: 0.3.0</h2> 
+<p>这是我所知道最完整最简洁的JavaScript基础教程。</p> 
+<p>本文将带你尽快走进JavaScript的世界——前提是你有一些编程经验的话。本文试图描述这门语言的最小子集。我给这个子集起名叫做“JavaScript简易教程”，并推荐那些准备深入阅读细节和高级技巧之前的新手阅读。合抱之木生于毫末，九层之台起于垒土，欲速则不达。本文的最后会提出如何进一步学习。</p> 
+<p><strong>警告：</strong>下面是我所描述的规则集和最佳实践。我喜欢整洁清晰（例如，你可以随时通过下面的目录快速导航）。横看成岭侧成峰，远近高低各不同，虽然规则是无懈可击的，但不可避免——每个人的理解会各不相同。</p> 
+<h2>目录</h2> 
+<ol> 
+ <li><a href="http://www.oschina.net#sect_conventions" rel="nofollow">本文约定</a></li> 
+ <li><a href="http://www.oschina.net#sect_nature" rel="nofollow">语言的性质</a></li> 
+ <li><a href="http://www.oschina.net#sect_syntax" rel="nofollow">语法</a></li> 
+ <li><a href="http://www.oschina.net#sect_variables_assignment" rel="nofollow">变量和赋值</a></li> 
+ <li><a href="http://www.oschina.net#sect_values" rel="nofollow">值</a></li> 
+ <li><a href="http://www.oschina.net#sect_booleans" rel="nofollow">布尔</a></li> 
+ <li><a href="http://www.oschina.net#sect_numbers" rel="nofollow">数字</a></li> 
+ <li><a href="http://www.oschina.net#sect_strings" rel="nofollow">字符串</a></li> 
+ <li><a href="http://www.oschina.net#sect_statements" rel="nofollow">语句</a></li> 
+ <li><a href="http://www.oschina.net#sect_functions" rel="nofollow">函数</a></li> 
+ <li><a href="http://www.oschina.net#sect_exceptions" rel="nofollow">异常处理</a></li> 
+ <li><a href="http://www.oschina.net#sect_strict_mode" rel="nofollow">严格模式</a></li> 
+ <li><a href="http://www.oschina.net#sect_var_scope_closures" rel="nofollow">变量作用域和闭包</a></li> 
+ <li><a href="http://www.oschina.net#sect_objects" rel="nofollow">对象和继承</a></li> 
+ <li><a href="http://www.oschina.net#sect_arrays" rel="nofollow">数组</a></li> 
+ <li><a href="http://www.oschina.net#sect_regexp" rel="nofollow">正则表达式</a></li> 
+ <li><a href="http://www.oschina.net#sect_math" rel="nofollow">数学</a></li> 
+ <li><a href="http://www.oschina.net#sect_standard_library" rel="nofollow">标准库的其他功能</a></li> 
+ <li><a href="http://www.oschina.net#sect_learn_next" rel="nofollow">下一步学什么？</a></li> 
+</ol> 
+<h2>本文约定（Conventions used in this blog post）</h2> 
+<h3>命令行交互（Command line interaction）</h3> 
+<p>每当我介绍一个新概念，我都会尝试通过JavaScript命令行进行演示。像下面这样：</p> 
+<pre><code>&gt; 3 + 4
+  7
+</code></pre> 
+<p>大于号后面的文本是用户输入内容。其他的都是JavaScript引擎的输出内容。此外，也可以使用console.log()来向控制台打印数据（这种方法可以在大部分JavaScript引擎中工作，包括Node.js）.</p> 
+<h3>查找文档（Finding documentation）</h3> 
+<p>有时你会看到一些函数或方法有超链接，你应该清楚他们的工作原理。如果没有，可以在<a href="https://developer.mozilla.org/en-US/" rel="nofollow">Mozilla Developer Network</a> (MDN)上查看细节，你也可以使用Google在MDN上查找文档。例如，下面是通过Google搜索数组的push()方法的例子：</p> 
+<p><a href="https://www.google.com/search?q=mdn+array+push" rel="nofollow">mdn array push</a></p> 
+<h2>语言的性质（The nature of the language）</h2> 
+<p>本节对JavaScript的性质做简要介绍，以帮你理解一些疑问。</p> 
+<h3>JavaScript 和 ECMAScript（JavaScript versus ECMAScript）</h3> 
+<p>编程语言称为JavaScript，语言标准被称为ECMAScript。他们有不同名字的原因是因为“Java”已经被注册为商标（属于Oracle）。目前，只有Mozilla被正式允许使用“JavaScript”名称，因为很久以前他们得到一份许可。因此，开放的语言标准拥有不同的名字。当前的JavaScript版本是ECMAScript 5，ECMAScript 6当前是<a href="http://www.2ality.com/2012/11/guide-esnext.html" rel="nofollow">开发版</a>。</p> 
+<h3>影响（Influences）</h3> 
+<p>JavaScript之父，Brendan Eich 别无选择必须<a href="http://yanhaijing.com/javascript/2013/06/22/javascript-designing-a-language-in-10-days" rel="nofollow">迅速创建一门语言</a>。（否则，会更糟糕，Netscape将使用其他技术）。他借鉴了几门其他语言：</p> 
+<ul> 
+ <li>JavaScript借鉴了Java的语法和如何区分<a href="http://www.oschina.net#sect_prim_vs_obj" rel="nofollow">原始值和对象</a>。</li> 
+ <li>JavaScript的函数设计受Scheme和AWK的启发——他们（的函数）都是第一类（first-class）对象，并且在语言中广泛使用。<a href="http://www.oschina.net#sect_closures" rel="nofollow">闭包</a>使他们（函数）变成强大的工具。</li> 
+ <li>Self影响了JavaScript独一无二的面向对象编程(OOP)风格。它的<a href="http://www.2ality.com/2011/06/prototypes-as-classes.html" rel="nofollow">核心思想</a>（在这里我们没有提到）非常优雅，基于此创建的语言非常少。但后面会提到一个<a href="http://www.oschina.net#sect_constructors" rel="nofollow">简单的模式</a>照顾大部分用例。JavaScript面向对象编程的杀手级特性是你可以直接创建对象。不需要先创建类或其他类似的东西。</li> 
+ <li>Perl和Python<a href="http://www.2ality.com/2013/02/javascript-influences.html" rel="nofollow">影响了</a>JavaScript字符串，数组和正则表达式的操作。</li> 
+</ul> 
+<p>JavaScript直到ECMAScript 3才加入异常处理，这解释了为什么这门语言经常自动转换类型和经常静默失败：最初没有抛出异常的功能。</p> 
+<p>一方面，JavaScript有很多怪癖，并且缺失很多功能（块级变量作用域（block-sciped variables），模块（modules）支持子类型（subtyping）等）。另一方面，它有几个非常强大的特性，允许你弥补上面的问题。在其他语言中，你要学习语言特性。在JavaScript中，你需要经常学习模式代替。</p> 
+<h3>深入阅读（Further reading）</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2011/03/javascript-how-it-all-began.html" rel="nofollow">JavaScript: how it all began</a></li> 
+ <li><a href="http://www.2ality.com/2012/09/javascript-glass-half-full.html" rel="nofollow">JavaScript: the glass is half full</a> [什么让JavaScript如此吸引人？]</li> 
+ <li><a href="http://www.2ality.com/2011/06/ecmascript.html" rel="nofollow">ECMAScript: ES.next versus ES 6 versus ES Harmony</a> [包括ECMAScript版本的一个简史]</li> 
+ <li><a href="http://www.2ality.com/2013/02/javascript-influences.html" rel="nofollow">Perl and Python influences in JavaScript</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2013/06/22/javascript-designing-a-language-in-10-days" rel="nofollow">Javascript:10天设计一门语言</a></li> 
+</ul> 
+<h2>语法（Syntax）</h2> 
+<p>这节介绍一些JavaScript的基本语法规则。</p> 
+<h3>语句和表达式（Statements versus expressions）</h3> 
+<p>了解JavaScript的语法，先来了解两个主要的语法类型：语句和表达式。</p> 
+<ul> 
+ <li><p>语句通常“做某些事情”。程序是一组语句序列。举个例子，下面声明（创建）一个变量 foo：<br> var foo;</p></li> 
+ <li><p>表达式产生值。他们通常位于赋值操作的右边，函数参数，等。举个例子：<br> 3 * 7</p></li> 
+</ul> 
+<p>语句和表达式之间的区别最好通过实例说明，JavaScript（像Java）有两种不同的方式实现if-then-else。一种是用语句：</p> 
+<pre><code>var x;
+if (y &gt;= 0) {
+    x = y;
+} else {
+    x = -y;
+}
+</code></pre> 
+<p>另一种是表达式：</p> 
+<pre><code>var x = y &gt;= 0 ? y : -y;
+</code></pre> 
+<p>你可以将后者作为函数参数（但前者不行）：</p> 
+<pre><code>myFunction(y &gt;= 0 ? y : -y)
+</code></pre> 
+<p>最后，每当JavaScript期待一个语句，你也可以用一个表达式代替。例如：</p> 
+<pre><code>foo(bar(7, 1));
+</code></pre> 
+<p><code>foo(...);</code>是一个语句（也叫做表达式语句），<code>bar(7, 1)</code>是一个表达式。他们都实现函数调用。</p> 
+<h3>流程控制语句和语句块（Control flow statements and blocks）</h3> 
+<p>流程控制语句，其语句体可以是单条语句。举两个例子：</p> 
+<pre><code>if (obj !== null) obj.foo();
+
+while (x &gt; 0) x--;
+</code></pre> 
+<p>然而，任何语句总能被语句块代替，花括号包含零或多条语句。因此，你也可以这样写：</p> 
+<pre><code>if (obj !== null) {
+    obj.foo();
+}
+
+while (x &gt; 0) {
+    x--;
+}
+</code></pre> 
+<p>在本文中，我们只使用后一种方式。</p> 
+<h3>分号（Semicolons）</h3> 
+<p>JavaScript中的分号是<a href="http://www.2ality.com/2011/05/semicolon-insertion.html" rel="nofollow">可选的</a>。但省略（分号）可能会带来意想不到的结果，所以我建议你不要那样做。</p> 
+<p>正如上面所看到的，分号作为语句的结尾，但语句块不需要。仅有一种情况下你能看到语句块后面有分号——函数表达式后面的函数体块。表达式作为语句的结尾，后面是分号：</p> 
+<pre><code>var x = 3 * 7;
+var f = function () { };
+</code></pre> 
+<h3>注释（Comments）</h3> 
+<p>JavaScript的注释有两种形式：单行注释和多行注释。单行注释以//开头，以换行符结尾：</p> 
+<pre><code>x++; // 单行（single-line）注释
+</code></pre> 
+<p>多行注释用/**/包裹</p> 
+<pre><code>/* 
+ 这是多行注释
+ 多行哦
+ */
+</code></pre> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2012/09/expressions-vs-statements.html" rel="nofollow">Expressions versus statements in JavaScript</a></li> 
+ <li><a href="http://www.2ality.com/2011/05/semicolon-insertion.html" rel="nofollow">Automatic semicolon insertion in JavaScript</a></li> 
+</ul> 
+<h2>变量和赋值（Variables and assignment）</h2> 
+<p>JavaScript中的变量在使用前必须先声明，否则会报错引用错误（Reference Error）：</p> 
+<pre><code>var foo;  // 声明变量“foo”
+</code></pre> 
+<h3>赋值（Assignment）</h3> 
+<p>你可以在声明变量的同时为其赋值：</p> 
+<pre><code>var foo = 6;
+</code></pre> 
+<p>你也可以给已经存在的变量重新赋值：</p> 
+<pre><code>foo = 4;  // 更改变量的值
+</code></pre> 
+<h3>复合赋值操作符（Compount assignment operators）</h3> 
+<p>有很多复合赋值操作符，例如+=。下面的两个赋值操作等价：</p> 
+<pre><code>x += 1;
+x = x + 1;
+</code></pre> 
+<h3>标识符和变量名（Identifiers and variable names）</h3> 
+<p>标识符就是事物的名字，在JavaScript中他们扮演不同的语法角色。例如，变量的名称是一个标识符。</p> 
+<p>大体上，标识符的第一个字符可以是任何Unicode字符、美元标志符（$）或下划线（_）。后面可以是任意字符和数字。因此，下面全是合法的标识符：</p> 
+<pre><code>arg0
+_tmp
+$elem
+π
+</code></pre> 
+<p><strong>注意：</strong>首字符不能是数字，如果是数字的话，该如何区分是数字还是变量呢？</p> 
+<p>一些标识符是“保留关键字”——他们是语法的一部分，不能用作变量名：</p> 
+<blockquote> 
+ <p>arguments break case catch class const continue debugger default delete do else enum eval export extends false finally for function if implements import in instanceof interface let new null package private protected public return static super switch this throw true try typeof var void while with yield</p> 
+</blockquote> 
+<p>从技术上讲，下面三个标识符不是保留字，但也不应该作为变量名：</p> 
+<blockquote> 
+ <p>Infinity NaN undefined</p> 
+</blockquote> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://mathiasbynens.be/notes/javascript-identifiers" rel="nofollow">Valid JavaScript variable names</a> [by Mathias Bynens]</li> 
+</ul> 
+<h2>值（Values）</h2> 
+<p>JavaScript有所有我们期待的编程语言值类型：布尔，数字，字符串，数组等。JavaScript中的所有值都有属性。每个属性有一个键（或名字）和一个值。参考记录的域（fields of record）。你可以使用点（.）操作符读取属性：</p> 
+<pre><code>value.propKey
+</code></pre> 
+<p>举个例子：字符串“abc”有属性lenght（长度）。</p> 
+<pre><code> &gt; var str = 'abc';
+ &gt; str.length
+   3
+</code></pre> 
+<p>上面的代码也可以写成下面这样：</p> 
+<pre><code>&gt; 'abc'.length
+  3
+</code></pre> 
+<p>点操作符也可以用来给属性赋值：</p> 
+<pre><code> &gt; var obj = {};  // 空对象
+ &gt; obj.foo = 123; // 创建属性“foo”，设置它为123
+   123
+ &gt; obj.foo
+   123
+</code></pre> 
+<p>你也可以通过它（.）调用方法：</p> 
+<pre><code>&gt; 'hello'.toUpperCase()
+  'HELLO'
+</code></pre> 
+<p>上面，我们在值“hello”上面调用方法 toUpperCase()。</p> 
+<h3>原始类型值和对象（Primitive values versus objects）</h3> 
+<p>JavaScript定义了不同值之间的区别：</p> 
+<ul> 
+ <li>原始值包括：boolean，number，string，null和undefined，</li> 
+ <li>所有其他的值都是对象。实际上对象被定义为——所有不为原始值的值。</li> 
+</ul> 
+<p>两者之间的主要区别在于他们是如何被比较的：每一个对象有一个独一无二的标志，并且仅和自己相等：</p> 
+<pre><code>&gt; var obj1 = {};  // 一个空对象
+&gt; var obj2 = {};  // 另一个空对象
+&gt; obj1 === obj2
+  false
+&gt; obj1 === obj1
+  true
+</code></pre> 
+<p>相反，所有原始值只要编码值相同就被认为是相同的：</p> 
+<pre><code>&gt; var prim1 = 123;
+&gt; var prim2 = 123;
+&gt; prim1 === prim2
+  true
+</code></pre> 
+<p>接下来的两节会介绍原始值和对象的更多细节。</p> 
+<h3>原始类型值（Primitive values）</h3> 
+<p>下面全是原始类型值（简称：原始值）：</p> 
+<ul> 
+ <li><a href="http://www.oschina.net#sect_booleans" rel="nofollow">布尔类型</a>：true，false</li> 
+ <li><a href="http://www.oschina.net#sect_numbers" rel="nofollow">数字类型</a>：1736，1.351</li> 
+ <li><a href="http://www.oschina.net#sect_strings" rel="nofollow">字符串类型</a>: ‘abc’，“abc”</li> 
+ <li>两个“<a href="http://www.oschina.net#sect-non-values" rel="nofollow">无值（non-values）</a>”：undefined，null</li> 
+</ul> 
+<p>原始值的特征：</p> 
+<ul> 
+ <li><p><strong>值做比较时：</strong>“内容”做比较。</p> <pre><code>&gt; 3 === 3
+  true
+&gt; 'abc' === 'abc'
+  true
+</code></pre></li> 
+ <li><p><strong>无法更改：</strong>值的属性无法更改，无法添加和移除属性。</p> <pre><code>&gt; var str = 'abc';
+&gt; str.foo = 3; // try to create property `foo` ⇒ no effect
+&gt; str.foo  // unknown property
+  undefined 
+</code></pre></li> 
+</ul> 
+<p>(获取未知属性总返回undefined)<br>- <strong>原始值的集合是固定的（fixed set of values）：</strong>你不能自定义原始值。</p> 
+<h3>对象（Objects）</h3> 
+<p>所有非原始值（non-primitive）的值都是对象。最常见的几种对象类型是：</p> 
+<ul> 
+ <li><p><a href="http://www.oschina.net#sect_objects" rel="nofollow">简单对象</a>（类型是Object）能通过对象字面量创建：</p><p>{<br> firstName: ‘Jane’,<br> lastName: ‘Doe’<br>}</p></li> 
+</ul> 
+<p>上面的对象有两个属性：<code>firstName</code>属性的值是“Jane”，<code>lastName</code>属性的值是“Doe”。<br>- <a href="http://www.oschina.net#sect_arrays" rel="nofollow">数组</a>（类型是 Array）能通过数组字面量创建：</p> 
+<pre><code>[ 'apple', 'banana', 'cherry' ]
+</code></pre> 
+<p>上面的数组有三个元素，可以通过数字索引访问。例如“apple”的索引是0.<br>- <a href="http://www.oschina.net#sect_regexp" rel="nofollow">正则表达式对象</a>（类型是 RegExp）能通过正则表达式字面量创建。</p> 
+<pre><code>/^a+b+$/
+</code></pre> 
+<p>对象的特征：</p> 
+<ul> 
+ <li><p><strong>比较的是引用：</strong>比较的是标识符，每个值有自己的标识符。</p> <pre><code>&gt; {} === {}  // 两个不同的空对象
+  false
+
+&gt; var obj1 = {};
+&gt; var obj2 = obj1;
+&gt; obj1 === obj2
+  true
+</code></pre></li> 
+</ul> 
+<ul> 
+ <li><p><strong>默认可以更改。</strong></p> <pre><code> &gt; var obj = {};
+ &gt; obj.foo = 123;
+ &gt; obj.foo
+   123
+</code></pre></li> 
+</ul> 
+<p>-** 用户可扩展（user-extensible）：**你可以通过<a href="http://www.oschina.net#sect_constructors" rel="nofollow">构造函数</a>定义新的对象类型。</p> 
+<p>所有的数据结构（如<a href="http://www.oschina.net#sect_arrays" rel="nofollow">数组</a>）都是对象，但并不是所有的对象都是数据结构。例如：<a href="http://www.oschina.net#sect_regexp" rel="nofollow">正则表达式是对象</a>，但不是数据结构。</p> 
+<h3>undefined 和 null（undefined and null）</h3> 
+<p>多少有些不必要，JavaScript有两个“无值（non-values）”：undefined 和 null。</p> 
+<ul> 
+ <li><p>undefined的意思是“没有值（no value）”。未初始化的变量是undefined：</p> <pre><code>&gt; var foo;
+&gt; foo
+undefined
+</code></pre></li> 
+</ul> 
+<p>读取不存在的属性时，将返回undefined：</p> 
+<pre><code>    &gt; var obj = {}; // 空对象
+    &gt; obj.foo
+      undefined
+</code></pre> 
+<p>缺省的参数也是undefined：</p> 
+<pre><code>    &gt; function f(x) { return x }
+    &gt; f()
+      undefined
+</code></pre> 
+<ul> 
+ <li>null的意思是“没有对象（no object）”。它被用来表示对象的无值（参数，链上的对象等）。</li> 
+</ul> 
+<p>通常情况下你应该把undefined和null看成是等价的，如果他们代表相同意义的无值的话。检查他们的一种方式是通过严格比较：</p> 
+<pre><code>if (x === undefined || x === null) {
+    ...
+}
+</code></pre> 
+<p>另一种在实际中使用的方法是认为undefined 和 null 都是<a href="http://www.oschina.net#sect_truthy_falsy" rel="nofollow">false</a>：</p> 
+<pre><code>if (!x) {
+    ...
+}
+</code></pre> 
+<p><strong>警告：</strong>false，0，NaN 和 “” 都被当作false。</p> 
+<h3>包装类型（Wrapper types）</h3> 
+<p>对象类型的实例Foo（包括内建类型，例如Array和其他自定义类型）从对象Foo.prototype上获取方法。你可以通过读取这个方法的方式（不是调用）验证这点：</p> 
+<pre><code>&gt; [].push === Array.prototype.push
+  true
+</code></pre> 
+<p>相反，原始类型是没有类型的，所以每个原始类型有一个关联类型，称之为包装类型：</p> 
+<ul> 
+ <li><p>布尔值的包装类型是 Boolean。布尔值从Boolean.prototype上获取方法：</p> <pre><code>&gt; true.toString === Boolean.prototype.toString
+</code></pre> true</li> 
+</ul> 
+<p>注意包装类型名字的首字母是大写的B。如果在JavaScript中布尔值的类型可以访问，那么它可能会被转换为布尔对象。<br>- 数字值的包装类型是Number。<br>- 字符串值的包装类型是String。</p> 
+<p>包装类型也有实例（他们的实例是对象），但不常用。相反，包装类型有其他用处：如果你将他们作为函数调用，他们可以将值转换为原始类型。</p> 
+<pre><code>&gt; Number('123')
+  123
+&gt; String(true)
+  'true'
+</code></pre> 
+<h3>通过typeof 和 instanceof 将值分类（Categorizing values via typeof and instanceof）</h3> 
+<p>有两个操作符可以用来将值分类：typeof 主要用于原始值，instanceof 主要用于对象。</p> 
+<p><strong>typeof</strong> 使用方法如下：</p> 
+<pre><code>typeof «value»
+</code></pre> 
+<p><code>typeof</code>返回描述 value “类型”的一个字符串。例如：</p> 
+<pre><code>&gt; typeof true
+  'boolean'
+&gt; typeof 'abc'
+  'string'
+&gt; typeof {} // 空对象字面量
+  'object'
+&gt; typeof [] // 空数组字面量
+  'object'
+</code></pre> 
+<p>下面列出了typeof操作的所有结果：</p> 
+<table> 
+ <tbody> 
+  <tr> 
+   <td><strong>操作数</strong></td> 
+   <td><strong>结果</strong></td> 
+  </tr> 
+  <tr> 
+   <td>undefined</td> 
+   <td>'undefined'</td> 
+  </tr> 
+  <tr> 
+   <td>null</td> 
+   <td>'object'</td> 
+  </tr> 
+  <tr> 
+   <td>Boolean value</td> 
+   <td>'boolean'</td> 
+  </tr> 
+  <tr> 
+   <td>Number value</td> 
+   <td>'number'</td> 
+  </tr> 
+  <tr> 
+   <td>String value</td> 
+   <td>'string'</td> 
+  </tr> 
+  <tr> 
+   <td>Function</td> 
+   <td>'function'</td> 
+  </tr> 
+  <tr> 
+   <td>All other values</td> 
+   <td>'object'</td> 
+  </tr> 
+ </tbody> 
+</table> 
+<p>有两个结果和我们上面说的的原始值与对象是矛盾的：</p> 
+<ul> 
+ <li>函数的类型是“function”而不是“object”。鉴于函数（类型为“function”）是对象（类型是对象）的子类型，这不是一个错误。</li> 
+ <li>null的类型是“object”。这是一个bug，但从没被修复，因为修复后会破坏现有的代码。</li> 
+</ul> 
+<p><strong>instanceof</strong>使用方法如下：</p> 
+<pre><code>«value» instanceof «Constr»
+</code></pre> 
+<p>如果 value 是一个对象，并且value 是由构造函数Constr创建的（参考：类）。例如：</p> 
+<pre><code>&gt; var b = new Bar();  // 通过构造函数Bar创建对象
+&gt; b instanceof Bar
+  true
+&gt; {} instanceof Object
+  true
+&gt; [] instanceof Array
+  true
+&gt; [] instanceof Object  // 数字是对象的子类型
+  true
+</code></pre> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2013/01/categorizing-values.html" rel="nofollow">Categorizing values in JavaScript</a></li> 
+ <li><a href="http://www.2ality.com/2011/11/improving-typeof.html" rel="nofollow">Improving the JavaScript typeof operator</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2014/01/05/exploring-the-abyss-of-null-and-undefined-in-javascript" rel="nofollow">探索javascript中null和undefined的深渊</a></li> 
+</ul> 
+<h2>布尔（Booleans）</h2> 
+<p>布尔类型原始值包括true和false。下面的操作符产生布尔值：</p> 
+<ul> 
+ <li>二元逻辑运算符：&amp;&amp;（与），||（或）</li> 
+ <li>前缀逻辑运算符：!（非）</li> 
+ <li>等值运算符：=== !== == !=</li> 
+ <li>比较运算符（字符串或数字）：&gt; &gt;= &lt; &lt;=</li> 
+</ul> 
+<h3>真值和假值（Truthy and falsy）</h3> 
+<p>每当JavaScript希望一个布尔值时（例如：if语句的条件），可以使用任何值。它将被理解（转换）为true或false。下面的值被理解为false：</p> 
+<ul> 
+ <li>undefined, null</li> 
+ <li>布尔: false</li> 
+ <li>数字: -0, NaN</li> 
+ <li>字符串: ’’</li> 
+</ul> 
+<p>所有其他值被认为true。被理解为false的值称为假值（falsy），被理解为true的值称为真值（truthy）。可以使用Boolean作为函数，测试值被理解为什么。</p> 
+<pre><code>&gt; Boolean(undefined)
+  false
+&gt; Boolean(0)
+  false
+&gt; Boolean(3)
+  true
+</code></pre> 
+<h3>二元逻辑运算符（Binary logical operators）</h3> 
+<p>JavaScript中的二元逻辑运算符是短路运算——如果第一个操作数可以确定结果，第二个操作数将不被验证（运算）。例如，在下面的代码中，函数foo()永远不会被调用。</p> 
+<pre><code>false &amp;&amp; foo()
+true  || foo()
+</code></pre> 
+<p>此外，二元逻辑运算符会返回操作数中的一个——可能是一个布尔值，也可能不是。一张真值表用来决定返回哪个值：</p> 
+<ul> 
+ <li><p>与：如果第一个操作数是假值，返回第一个。否则返回第二个操作数。</p> <pre><code>&gt; NaN &amp;&amp; 'abc'
+  NaN
+&gt; 123 &amp;&amp; 'abc'
+  'abc'
+</code></pre></li> 
+ <li><p>或：如果第一个操作数是真值，返回第一个。否则，返回第二个操作数。</p> <pre><code>&gt; 'abc' || 123
+  'abc'
+&gt; '' || 123
+  123
+</code></pre></li> 
+</ul> 
+<h3>等值运算符（Equality operators）</h3> 
+<p>在JavaScript中检测相等，你可以使用严格相等（===）和严格不等（!==）。或者你也可以使用非严格相等（==）和非严格不等（!=）。经验规则：总是用严格运算符，假装非严格运算符不存在。严格相等更安全。</p> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2011/06/javascript-equality.html" rel="nofollow">Equality in JavaScript: === versus ==</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2014/04/25/strict-equality-exemptions" rel="nofollow">在JavaScript中什么时候使用==是正确的？</a></li> 
+</ul> 
+<h2>数字（Numbers）</h2> 
+<p>JavaScript中的所有数字都是浮点型（虽然大部分的JavaScript引擎内部也使用整数）。至于为什么这样设计，查看这里（<a href="http://yanhaijing.com/javascript/2014/03/14/what-every-javascript-developer-should-know-about-floating-points" rel="nofollow">每一个JavaScript开发者应该了解的浮点知识</a>）。</p> 
+<pre><code>&gt; 1 === 1.0
+  true
+</code></pre> 
+<p>特殊数字：</p> 
+<ul> 
+ <li><p>NaN (“不是一个数字 not a number”): 错误值。</p> <pre><code>&gt; Number('xyz')  // 'xyz' 不能被转换为数字
+  NaN
+</code></pre></li> 
+ <li><p>Infinity：也是最大错误值（溢出）.</p> <pre><code>&gt; 3 / 0
+  Infinity
+&gt; Math.pow(2, 1024)  // 数字太大了
+  Infinity
+</code></pre></li> 
+</ul> 
+<p>Infinity 有时很有用，因为它比任何其他数字都大。同样，-Infinity 比其他任何数字都小。<br>- JavaScript有<a href="http://www.2ality.com/2012/03/signedzero.html" rel="nofollow">两个零</a>，+0 和 -0。它（js引擎）通常不让你看到，并简单将两个零都显示为0：</p> 
+<pre><code>    &gt; +0
+      0
+    &gt; -0
+      0
+</code></pre> 
+<p>因此最好假装只有一个零（正如我们看到假值时所做的那样：-0 和 +0 都是假值）。</p> 
+<h3>运算符（Operators）</h3> 
+<p>JavaScript中有下列<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators" rel="nofollow">算数运算符</a>：</p> 
+<ul> 
+ <li>加: number1 + number2</li> 
+ <li>减: number1 - number2</li> 
+ <li>乘: number1 * number2</li> 
+ <li>除: number1 / number2</li> 
+ <li>模: number1 % number2</li> 
+ <li>自增: ++variable, variable++</li> 
+ <li>自减: –variable, variable–</li> 
+ <li>负值: -value</li> 
+ <li>正值（转换为数字）: +value</li> 
+</ul> 
+<p>全局对象<a href="http://www.oschina.net#sect_math" rel="nofollow">Math</a>通过函数提供更多算数运算操作。</p> 
+<p>JavaScript中也有<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators" rel="nofollow">位运算符</a>（例如：位与 &amp;）。</p> 
+<h3>深入阅读</h3> 
+<p>在2ality有<a href="http://www.2ality.com/search/label/numbers" rel="nofollow">一系列</a>博文介绍这些内容，例如：</p> 
+<ul> 
+ <li><a href="http://www.2ality.com/2012/04/number-encoding.html" rel="nofollow">How numbers are encoded in JavaScript</a></li> 
+ <li><a href="http://www.2ality.com/2012/03/signedzero.html" rel="nofollow">JavaScript’s two zeros</a></li> 
+ <li><a href="http://www.2ality.com/2012/02/js-integers.html" rel="nofollow">Integers and shift operators in JavaScript</a></li> 
+ <li><a href="http://www.2ality.com/2012/02/nan-infinity.html" rel="nofollow">NaN and Infinity in JavaScript</a></li> 
+ <li><a href="http://www.2ality.com/2012/07/large-integers.html" rel="nofollow">Working with large integers in JavaScript</a></li> 
+</ul> 
+<h2>字符串（Strings）</h2> 
+<p>字符串可以直接通过字符串字面量创建。这些字面量被单引号或双引号包裹。反斜线（\）转义字符并且产生一些控制字符。例如：</p> 
+<pre><code>'abc'
+"abc"
+
+'Did she say "Hello"?'
+"Did she say \"Hello\"?"
+
+'That\'s nice!'
+"That's nice!"
+
+'Line 1\nLine 2'  // 换行
+'Backlash: \\'
+</code></pre> 
+<p>可以通过方括号访问单个字符：</p> 
+<pre><code>&gt; var str = 'abc';
+&gt; str[1]
+  'b'
+</code></pre> 
+<p>length属性是字符串的字符数量。</p> 
+<pre><code>&gt; 'abc'.length
+  3
+</code></pre> 
+<p><strong>提醒：</strong>字符串是不可变的，如果你想改变现有字符串，你需要创建一个新的字符串。</p> 
+<h3>字符串运算符（String operators）</h3> 
+<p>字符串可以通过加号操作符（+）拼接，如果其中一个操作数为字符串，会将另一个操作数也转换为字符串。</p> 
+<pre><code>&gt; var messageCount = 3;
+&gt; 'You have '+messageCount+' messages'
+  'You have 3 messages'
+</code></pre> 
+<p>连续执行拼接操作可以使用 += 操作符：</p> 
+<pre><code>&gt; var str = '';
+&gt; str += 'Multiple ';
+&gt; str += 'pieces ';
+&gt; str += 'are concatenated.';
+&gt; str
+  'Multiple pieces are concatenated.'
+</code></pre> 
+<h3>字符串方法（String methods）</h3> 
+<p>字符串有许多有用的<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/prototype" rel="nofollow">方法</a>。例如：</p> 
+<pre><code>&gt; 'abc'.slice(1)  // 复制子字符串
+  'bc'
+&gt; 'abc'.slice(1, 2)
+  'b'
+
+&gt; '\t xyz  '.trim()  // 移除空白字符
+  'xyz'
+
+&gt; 'mjölnir'.toUpperCase()
+  'MJÖLNIR'
+
+&gt; 'abc'.indexOf('b')  // 查找字符串
+  1
+&gt; 'abc'.indexOf('x')
+  -1
+</code></pre> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2011/10/string-concatenation.html" rel="nofollow">String concatenation in JavaScript</a></li> 
+ <li><a href="http://www.2ality.com/2012/09/javascript-quotes.html" rel="nofollow">JavaScript: single quotes or double quotes?</a></li> 
+</ul> 
+<h2>语句（Statements）</h2> 
+<h3>条件（Conditionals）</h3> 
+<p>if语句通过布尔条件决定执行那个分支：</p> 
+<pre><code>if (myvar === 0) {
+    // then
+}
+
+if (myvar === 0) {
+    // then
+} else {
+    // else
+}
+
+if (myvar === 0) {
+    // then
+} else if (myvar === 1) {
+    // else-if
+} else if (myvar === 2) {
+    // else-if
+} else {
+    // else
+}
+</code></pre> 
+<p>下面的switch语句，furit的值决定那个分支被执行。</p> 
+<pre><code>switch (fruit) {
+    case 'banana':
+        // ...
+        break;
+    case 'apple':
+        // ...
+        break;
+    default:  // 所有其他情况
+        // ...
+}
+</code></pre> 
+<h3>循环（Loops）</h3> 
+<p>for 循环的格式如下：</p> 
+<pre><code>for(初始化; 当条件成立时循环; 下一步操作)
+</code></pre> 
+<p>例子：</p> 
+<pre><code>for (var i=0; i &lt; arr.length; i++) {
+    console.log(arr[i]);
+}
+</code></pre> 
+<p>当条件成立时while循环继续循环它的循环体。</p> 
+<pre><code>// 和上面的for循环相等
+var i = 0;
+while (i &lt; arr.length) {
+    console.log(arr[i]);
+    i++;
+}
+</code></pre> 
+<p>当条件成立时，do-while循环继续循环。由于条件位于循环体之后，所以循环体总是被至少至少执行一次。</p> 
+<pre><code>do {
+    // ...
+} while(条件);
+</code></pre> 
+<p><strong>在所有的循环中：</strong></p> 
+<ul> 
+ <li>break中断循环</li> 
+ <li>continue开始一个新的循环迭代</li> 
+</ul> 
+<h2>函数（Functions）</h2> 
+<p>定义函数的一种方法是通过函数声明：</p> 
+<pre><code>function add(param1, param2) {
+    return param1 + param2;
+}
+</code></pre> 
+<p>上面的代码定义一个名称叫做add的函数，有两个参数param1和param2，并且返回参数的和。下面是如何调用这个函数：</p> 
+<pre><code>&gt; add(6, 1)
+  7
+&gt; add('a', 'b')
+  'ab'
+</code></pre> 
+<p>另一种定义add()函数的方法是通过函数表达式：</p> 
+<pre><code>var add = function (param1, param2) {
+    return param1 + param2;
+};
+</code></pre> 
+<p>函数表达式产生一个值，因此可以直接将函数作为参数传递给其他函数：</p> 
+<pre><code>someOtherFunction(function (p1, p2) { ... });
+</code></pre> 
+<h3>函数声明提升（Function declarations are hoisted）</h3> 
+<p>函数声明会被提升，他们全被移动到当前作用域开始之处。这允许你在函数声明之前调用它们：</p> 
+<pre><code>function foo() {
+    bar();  // 没问题，bar被提升
+    function bar() {
+        ...
+    }
+}
+</code></pre> 
+<p>注意：虽然变量声明也会被<a href="http://www.oschina.net#sect_var_scope_closures" rel="nofollow">提升</a>，但赋值的过程不会被提升：</p> 
+<pre><code>function foo() {
+    bar();  // 有问题，bar是undefined
+    var bar = function () {
+        // ...
+    };
+}
+</code></pre> 
+<h3>特殊变量arguments（The special variable arguments）</h3> 
+<p>在JavaScript中你可以调用任意函数并传递任意数量的参数——语言绝不会抱怨（参数检测）。都可以正常工作，然而，使所有参数可访问需要通过特殊变量 arguments。arguments 看起来像数组，但它没有数组的方法（称为类数组 array-like）。</p> 
+<pre><code>&gt; function f() { return arguments }
+&gt; var args = f('a', 'b', 'c');
+&gt; args.length
+3
+&gt; args[0]  // 获取索引为0的元素
+'a'
+</code></pre> 
+<h3>太多或太少参数（Too many or too few arguments）</h3> 
+<p>让我们通过下面的函数探索JavaScript中传递太多或太少参数时如何处理（函数 toArray在<a href="http://www.oschina.net#sect_toarray" rel="nofollow">后面提到</a>）</p> 
+<pre><code>function f(x, y) {
+    console.log(x, y);
+    console.log(toArray(arguments));
+}
+</code></pre> 
+<p>多出的参数将被忽略（可以通过arguments访问）：</p> 
+<pre><code>&gt; f('a', 'b', 'c')
+a b
+[ 'a', 'b', 'c' ]
+</code></pre> 
+<p>缺少的参数将会是undefined：</p> 
+<pre><code>&gt; f('a')
+a undefined
+[ 'a' ]
+&gt; f()
+undefined undefined
+[]
+</code></pre> 
+<h3>可选参数（Optional parameters）</h3> 
+<p>下面是一个常见模式，给参数设置默认值：</p> 
+<pre><code>function pair(x, y) {
+    x = x || 0;  // (*)
+    y = y || 0;
+    return [ x, y ];
+}
+</code></pre> 
+<p>在（*）这行，如果x是真值（除了：null，undefined 等），||操作符返回x。否则，它返回第二个操作数。</p> 
+<pre><code>&gt; pair()
+[ 0, 0 ]
+&gt; pair(3)
+[ 3, 0 ]
+&gt; pair(3, 5)
+[ 3, 5 ] 
+</code></pre> 
+<h3>强制数量（Enforcing an arity）</h3> 
+<p>如果你想强制参数的数量，你可以检测arguments.length：</p> 
+<pre><code>function pair(x, y) {
+    if (arguments.length !== 2) {
+        throw new Error('Need exactly 2 arguments');
+    }
+    ...
+}
+</code></pre> 
+<h3>将arguments 转换为数组（Converting arguments to an array）</h3> 
+<p>arguments 不是一个数组，它仅仅是<a href="http://www.2ality.com/2013/05/quirk-array-like-objects.html" rel="nofollow">类数组</a>（array-like）：它有一个length属性，并且你可以通过方括号索引方式访问它的元素。然而，你不能移除元素，或在它上面调用任何数组方法。因此，有时你需要将其转换为数组。这就是下面函数的作用。</p> 
+<pre><code>function toArray(arrayLikeObject) {
+    return [].slice.call(arrayLikeObject);
+}
+</code></pre> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2013/05/quirk-parameters.html" rel="nofollow">JavaScript quirk 5: parameter handling</a></li> 
+</ul> 
+<h2>异常处理（Exception handling）</h2> 
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch" rel="nofollow">异常处理</a>最常见的方式像下面这样：</p> 
+<pre><code>function throwException() {
+    throw new Error('Problem!');
+}
+
+try {
+    throwException();
+} catch (e) {
+    console.log(e);  // 错误：信息
+    console.log(e.stack);  // 非标准，但大部分浏览器支持
+}
+</code></pre> 
+<p>try分支包裹易出错的代码，如果try分支内部抛出异常，catch分支将会执行。</p> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2011/12/subtyping-builtins.html" rel="nofollow">Subtyping JavaScript builtins in ECMAScript 5 [especially relevant for errors]</a></li> 
+</ul> 
+<h2>严格模式（Strict mode）</h2> 
+<p><a href="http://www.2ality.com/2011/01/javascripts-strict-mode-summary.html" rel="nofollow">严格模式</a>开启检测和一些其他措施，使JavaScript变成更整洁的语言。推荐使用严格模式。为了开启严格模式，只需在JavaScript文件或script标签第一行添加如下语句：</p> 
+<pre><code>'use strict';
+</code></pre> 
+<p>你也可以在每个函数上选择性开启严格模式，只需将上面的代码放在函数的开头：</p> 
+<pre><code>function functionInStrictMode() {
+    'use strict';
+}
+</code></pre> 
+<p>下面的两小节看下严格模式的三大好处。</p> 
+<h3>明确错误（Explicit errors）</h3> 
+<p>让我们看一个例子，严格模式给我们明确的错误，否则JavaScript总是静默失败：下面的函数 f() 执行一些非法操作，它试图更改所有字符串都有的只读属性——length：</p> 
+<pre><code>function f() {
+    'abc'.length = 5;
+}
+</code></pre> 
+<p>当你调用上面的函数，它静默失败，赋值操作被简单忽略。让我们将 f() 在严格模式下运行：</p> 
+<pre><code>function f_strict() {
+    'use strict';
+    'abc'.length = 5;
+}
+</code></pre> 
+<p>现在浏览器报给我们一些错误：</p> 
+<pre><code>&gt; f_strict()
+TypeError: Cannot assign to read only property 'length' of abc
+</code></pre> 
+<h3>不是方法的函数中的this（this in non-method functions）</h3> 
+<p>在严格模式下，不作为方法的函数中的this值是undefined：</p> 
+<pre><code>function f_strict() {
+    'use strict';
+    return this;
+}
+console.log(f_strict() === undefined);  // true
+</code></pre> 
+<p>在非严格模式下，this的值是被称作全局对象（global object）（在浏览器里是window）：</p> 
+<pre><code>function f() {
+    return this;
+}
+console.log(f() === window);  // true
+</code></pre> 
+<h3>不再自动创建全局变量（No auto-created global variables）</h3> 
+<p>在非严格模式下，如果你给不存在的变量赋值，JavaScript会自动创建一个全局变量： </p> 
+<pre><code>&gt; function f() { foo = 5 }
+&gt; f()  // 不会报错
+&gt; foo
+5
+</code></pre> 
+<p>在严格模式下，这会产生一个错误：</p> 
+<pre><code>&gt; function f_strict() { 'use strict'; foo2 = 4; }
+&gt; f_strict()
+ReferenceError: foo2 is not defined
+</code></pre> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2011/01/javascripts-strict-mode-summary.html" rel="nofollow">JavaScript’s strict mode: a summary</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2013/12/28/demystifying-this-in-javascript" rel="nofollow">揭秘javascript中谜一样的this</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2014/04/30/javascript-this-keyword" rel="nofollow">JavaScript中的this关键字</a></li> 
+</ul> 
+<h2>变量作用域和闭包（Variable scoping and closures）</h2> 
+<p>在JavaScript中，你必须使用变量之前，通过var声明变量：</p> 
+<pre><code>&gt; var x;
+&gt; x = 3;
+&gt; y = 4;
+ReferenceError: y is not defined
+</code></pre> 
+<p>你可以用一条var语句声明和初始化多个变量：</p> 
+<pre><code>var x = 1, y = 2, z = 3;
+</code></pre> 
+<p>但我建议每个变量使用一条语句。因此，我将上面的语句重写为：</p> 
+<pre><code>var x = 1;
+var y = 2;
+var z = 3;
+</code></pre> 
+<p>由于提升（见下文），最好在函数顶部声明变量。</p> 
+<h3>变量和函数作用域（Variables are function-scoped）</h3> 
+<p>变量的作用域总是整个函数（没有块级作用域）。例如：</p> 
+<pre><code>function foo() {
+    var x = -3;
+    if (x &lt; 0) {  // (*)
+        var tmp = -x;
+        ...
+    }
+    console.log(tmp);  // 3
+}
+</code></pre> 
+<p>我们可以看到tmp变量不仅在（*）所在行的语句块存在，它在整个函数内都存在。</p> 
+<h3>变量提升（Variables are hoisted）</h3> 
+<p>变量声明会被提升：声明会被移到函数的顶部，但赋值过程不会。举个例子，在下面的函数中（*）行位置声明了一个变量。</p> 
+<pre><code>function foo() {
+    console.log(tmp); // undefined
+    if (false) {
+        var tmp = 3;  // (*)
+    }
+}
+</code></pre> 
+<p>在内部，上面的函数被执行像下面这样：</p> 
+<pre><code>function foo() {
+    var tmp;  // declaration is hoisted
+    console.log(tmp);
+    if (false) {
+        tmp = 3;  // assignment stays put
+    }
+}
+</code></pre> 
+<h3>闭包（Closures）</h3> 
+<p>每个函数保持和函数体内部变量的连接，甚至离开创建它的作用域之后。例如：</p> 
+<pre><code>function createIncrementor(start) {
+    return function () {  // (*)
+        return start++;
+    }
+}
+</code></pre> 
+<p>在（*）行开始的函数在它创建时保留上下文，并在内部保存一个start活动值：</p> 
+<pre><code>&gt; var inc = createIncrementor(5);
+&gt; inc()
+5
+&gt; inc()
+6
+&gt; inc()
+7
+</code></pre> 
+<p>闭包是一个函数加上和其作用域链的链接。因此，createIncrementor() 返回的是一个闭包。</p> 
+<h3>IIFE：模拟块级作用域（IIFE: Simulating block scoping）</h3> 
+<p>有时你想模拟一个块，例如你想将变量从全局作用域隔离。完成这个工作的模式叫做 IIFE(立即执行函数表达式(Immediately Invoked Function Expression))：</p> 
+<pre><code>(function () {  // 块开始
+    var tmp = ...;  // 非全局变量
+}());  // 块结束
+</code></pre> 
+<p>上面你会看到函数表达式被立即执行。外面的括号用来阻止它被解析成函数声明；只有函数表达式能被立即调用。函数体产生一个新的作用域并使 tmp 变为局部变量。</p> 
+<h3>闭包实现变量共享（Inadvertent sharing via closures）</h3> 
+<p>下面是个经典问题，如果你不知道，会让你费尽思量。因此，先浏览下，对问题有个大概的了解。</p> 
+<p>闭包保持和外部变量的连接，有时可能和你想像的行为不一致：</p> 
+<pre><code>var result = [];
+for (var i=0; i &lt; 5; i++) {
+    result.push(function () { return i });  // (*)
+}
+console.log(result[1]()); // 5 (不是 1)
+console.log(result[3]()); // 5 (不是 3)
+</code></pre> 
+<p>(*)行的返回值总是当前的i值，而不是当函数被创建时的i值。当循环结束后，i的值是5，这是为什么数组中的所有函数的返回值总是一样的。如果你想捕获当前变量的快照，你可以使用 IIFE：</p> 
+<pre><code>for (var i=0; i &lt; 5; i++) {
+    (function (i2) {
+        result.push(function () { return i2 });
+    }(i));  // 复制当前的i
+}
+</code></pre> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2012/11/var-statement-rules.html" rel="nofollow">Variable declarations: three rules you can break</a></li> 
+ <li><a href="http://www.2ality.com/2013/05/quirk-variable-scope.html" rel="nofollow">JavaScript quirk 6: the scope of variables</a></li> 
+ <li><a href="http://www.2ality.com/2013/05/quirk-closures.html" rel="nofollow">JavaScript quirk 7: inadvertent sharing of variables via closures</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2013/08/30/understanding-scope-and-context-in-javascript" rel="nofollow">认识javascript中的作用域和上下文</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2014/04/30/JavaScript-Scoping-and-Hoisting" rel="nofollow">JavaScript的作用域和提升机制</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2014/04/29/what-is-the-execution-context-in-javascript" rel="nofollow">了解JavaScript的执行上下文</a></li> 
+</ul> 
+<h2>对象和继承（Objects and inheritance）</h2> 
+<p>和所有的<a href="http://www.oschina.net#sect_values" rel="nofollow">值类型</a>一样，对象有属性。事实上，你可以将对象当作一组属性的集合，每个属性都是一对（键和值）。键是字符串，值可以是任意JavaScript值。到目前为止，我们仅仅见过键是<a href="http://www.oschina.net#identifiers" rel="nofollow">标识符</a>的属性，因为点操作符处理的键必须为标识符。在这节，你讲见到另一种访问属性的方法，能将任意字符串作为键。</p> 
+<h3>单个对象（Single objects）</h3> 
+<p>在JavaScript中，你可以直接创建对象，通过对象字面量：</p> 
+<pre><code>var jane = {
+    name: 'Jane',
+
+    describe: function () {
+        'use strict';
+        return 'Person named '+this.name;
+    }
+};
+</code></pre> 
+<p>上面的对象有两个属性：name 和 describe。你能读（“get”）和 写（“set”）属性：</p> 
+<pre><code>&gt; jane.name  // get
+'Jane'
+&gt; jane.name = 'John';  // set
+&gt; jane.newProperty = 'abc';  // 自动创建
+</code></pre> 
+<p>属性是函数如 describe 可以被当作方法调用。当调用他们时可以在它们内部通过this引用对象。</p> 
+<pre><code>&gt; jane.describe()  // 调用方法
+'Person named John'
+&gt; jane.name = 'Jane';
+&gt; jane.describe()
+'Person named Jane'
+</code></pre> 
+<p>in 操作符用来检测一个属性是否存在：</p> 
+<pre><code>&gt; 'newProperty' in jane
+true
+&gt; 'foo' in jane
+false
+</code></pre> 
+<p>若读取一个不存在的属性，将会得到undefined值。因此上面的两个检查也可以像下面这样：</p> 
+<pre><code>&gt; jane.newProperty !== undefined
+true
+&gt; jane.foo !== undefined
+false
+</code></pre> 
+<p>delete操作符用来删除一个属性：</p> 
+<pre><code>&gt; delete jane.newProperty
+true
+&gt; 'newProperty' in jane
+false
+</code></pre> 
+<h3>任意键属性（Arbitrary property keys）</h3> 
+<p>属性的键可以是任意字符串。到目前为止，我们看到的对象字面量中的和点操作符后的属性关键字。按这种方法你只能使用<a href="http://www.oschina.net#identifiers" rel="nofollow">标识符</a>。如果你想用其他任意字符串作为键名，你必须在对象字面量里加上引号，并使用方括号获取和设置属性。</p> 
+<pre><code>&gt; var obj = { 'not an identifier': 123 };
+&gt; obj['not an identifier']
+123
+&gt; obj['not an identifier'] = 456;
+</code></pre> 
+<p>方括号允许你动态计算属性关键字：</p> 
+<pre><code>&gt; var x = 'name';
+&gt; jane[x]
+'Jane'
+&gt; jane['na'+'me']
+'Jane'
+</code></pre> 
+<h3>引用方法（Extracting methods）</h3> 
+<p>如果你引用一个方法，它将失去和对象的连接。就其本身而言，函数不是方法，其中的this值为undefined（严格模式下）。</p> 
+<pre><code>&gt; var func = jane.describe;
+&gt; func()
+TypeError: Cannot read property 'name' of undefined
+</code></pre> 
+<p>解决办法是使用函数内置的bind()方法。它创建一个新函数，其this值固定为给定的值。</p> 
+<pre><code>&gt; var func2 = jane.describe.bind(jane);
+&gt; func2()
+'Person named Jane'
+</code></pre> 
+<h3>方法内部的函数（Functions inside a method）</h3> 
+<p>每个函数都有一个特殊变量this。如果你在方法内部嵌入函数是很不方便的，因为你不能从函数中访问方法的this。下面是一个例子，我们调用forEach循环一个数组：</p> 
+<pre><code>var jane = {
+    name: 'Jane',
+    friends: [ 'Tarzan', 'Cheeta' ],
+    logHiToFriends: function () {
+        'use strict';
+        this.friends.forEach(function (friend) {
+            // 这里的“this”是undefined
+            console.log(this.name+' says hi to '+friend);
+        });
+    }
+}
+</code></pre> 
+<p>调用 logHiToFriends 会产生错误：</p> 
+<pre><code>&gt; jane.logHiToFriends()
+TypeError: Cannot read property 'name' of undefined
+</code></pre> 
+<p>有两种方法修复这问题。</p> 
+<p>#1：将this存储在不同的变量。</p> 
+<pre><code>logHiToFriends: function () {
+    'use strict';
+    var that = this;
+    this.friends.forEach(function (friend) {
+        console.log(that.name+' says hi to '+friend);
+    });
+}
+</code></pre> 
+<p>#2：forEach的第二个参数允许提供this值。</p> 
+<pre><code>logHiToFriends: function () {
+    'use strict';
+    this.friends.forEach(function (friend) {
+        console.log(this.name+' says hi to '+friend);
+    }, this);
+}
+</code></pre> 
+<p>在JavaScript中函数表达式经常被用作函数参数。时刻小心函数表达式中的this。</p> 
+<h3>构造函数：对象工厂（Constructors: factories for objects）</h3> 
+<p>目前为止，你可能认为JavaScript的对象仅是键值的映射，通过JavaScript对象字面量可以得出这个观点，看起来很像其他语言中的地图/字典（map/dictionary）。然而，JavaScript对象也支持真正意义上的面向对象特性：继承（inheritance）。本节不会完全讲解JavaScript中继承的工作原理，但会给你以此为开始的简单模式。如果你想得到更多知识，请查阅这篇文章“<a href="http://www.2ality.com/2012/01/js-inheritance-by-example.html" rel="nofollow">JavaScript inheritance by example</a>”。</p> 
+<p>除了作为“真正”的函数和方法，函数还在JavaScript中扮演第三种角色：如果通过new操作符调用，他们会变为构造函数，对象的工厂。构造函数是对其他语言中的类的粗略模拟。约定俗成，构造函数的第一个字母大写。例如：</p> 
+<pre><code>// 设置实例数据
+function Point(x, y) {
+    this.x = x;
+    this.y = y;
+}
+// 方法
+Point.prototype.dist = function () {
+    return Math.sqrt(this.x*this.x + this.y*this.y);
+};
+</code></pre> 
+<p>我们看到构造函数分为两部分：首先，Point函数设置实例数据。其次，Point.prototype属性包含对象的方法。前者的数据是每个实例私有的，后面的数据是所有实例共享的。</p> 
+<p>我们通过new操作符调用Point：</p> 
+<pre><code>&gt; var p = new Point(3, 5);
+&gt; p.x
+3
+&gt; p.dist()
+5.830951894845301
+</code></pre> 
+<p>p是Point的一个实例：</p> 
+<pre><code>&gt; p instanceof Point
+true
+&gt; typeof p
+'object'
+</code></pre> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2012/01/objects-as-maps.html" rel="nofollow">The pitfalls of using objects as maps in JavaScript</a> [important, read soon]</li> 
+ <li><a href="http://www.2ality.com/2012/01/js-inheritance-by-example.html" rel="nofollow">JavaScript inheritance by example</a></li> 
+ <li><a href="http://www.2ality.com/2012/10/javascript-properties.html" rel="nofollow">Object properties in JavaScript</a> [advanced: each property has attributes that determine whether it is writable, etc.]</li> 
+ <li><a href="http://www.2ality.com/2012/03/private-data.html" rel="nofollow">Private data for objects in JavaScript</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2013/08/23/javascript-inheritance-how-to-shoot-yourself-in-the-foot-with-prototypes" rel="nofollow">Javascript继承 原型的陷阱</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2013/08/30/encapsulation-of-javascript" rel="nofollow">Javascript 封装问题</a></li> 
+</ul> 
+<h2>数组（Arrays）</h2> 
+<p>数组是数组元素的序列，能通过整数索引方法数组元素，数组索引从0开始。</p> 
+<h3>数组字面量（Array literals）</h3> 
+<p>数组字面量创建数组很方便：</p> 
+<pre><code>&gt; var arr = [ 'a', 'b', 'c' ];
+</code></pre> 
+<p>上面的数组有三个元素：分别是字符串“a”，“b”， “c”。你可以通过整数索引访问它们：</p> 
+<pre><code>&gt; arr[0]
+'a'
+&gt; arr[0] = 'x';
+&gt; arr
+[ 'x', 'b', 'c' ]
+</code></pre> 
+<p>length属性总表示一个数组有多少项元素。</p> 
+<pre><code>&gt; arr.length
+3
+</code></pre> 
+<p>除此之外它也可以用来从数组上移除尾部元素：</p> 
+<pre><code>&gt; arr.length = 2;
+&gt; arr
+[ 'x', 'b' ]
+</code></pre> 
+<p>in操作符也可以在数组上工作。</p> 
+<pre><code>&gt; 1 in arr // arr在索引为1处是否有元素？
+true
+&gt; 5 in arr // arr在索引为5处是否有元素？
+false
+</code></pre> 
+<p>值得注意的是数组是对象，因此可以有对象属性：</p> 
+<pre><code>&gt; arr.foo = 123;
+&gt; arr.foo
+123
+</code></pre> 
+<h3>数组方法（Array methods）</h3> 
+<p>数组有许多<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype" rel="nofollow">方法</a>。举些例子：</p> 
+<pre><code>&gt; var arr = [ 'a', 'b', 'c' ];
+
+&gt; arr.slice(1, 2)  // 复制元素
+[ 'b' ]
+&gt; arr.slice(1)
+[ 'b', 'c' ]
+
+&gt; arr.push('x')  // 在末尾添加一个元素
+4
+&gt; arr
+[ 'a', 'b', 'c', 'x' ]
+
+&gt; arr.pop()  // 移除最后一个元素
+'x'
+&gt; arr
+[ 'a', 'b', 'c' ]
+
+&gt; arr.shift()  // 移除第一个元素
+'a'
+&gt; arr
+[ 'b', 'c' ]
+
+&gt; arr.unshift('x')  // 在前面添加一个元素
+3
+&gt; arr
+[ 'x', 'b', 'c' ]
+
+&gt; arr.indexOf('b')  // 查找给定项在数组中的索引，若不存在返回-1
+1
+&gt; arr.indexOf('y') 
+-1
+
+&gt; arr.join('-')  // 将元素拼接为一个字符串
+'x-b-c'
+&gt; arr.join('')
+'xbc'
+&gt; arr.join()
+'x,b,c'
+</code></pre> 
+<h3>遍历数组（Iterating over arrays）</h3> 
+<p>有几种方法可以遍历数组元素。其中两个最重要的是 forEach 和 map。</p> 
+<p>forEach遍历整个数组，并将当前元素和它的索引传递给一个函数：</p> 
+<pre><code>[ 'a', 'b', 'c' ].forEach(
+    function (elem, index) {  // (*)
+        console.log(index + '. ' + elem);
+    });
+</code></pre> 
+<p>上面代码的输出</p> 
+<pre><code>0. a
+1. b
+2. c
+</code></pre> 
+<p>注意（*）行的函数参数是可省略的。例如：它可以只有一个参数 elem。</p> 
+<p>map创建一个新数组，通过给每个存在数组元素应用一个函数：</p> 
+<pre><code>&gt; [1,2,3].map(function (x) { return x*x })
+[ 1, 4, 9 ]
+</code></pre> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2012/12/arrays.html" rel="nofollow">Arrays in JavaScript</a></li> 
+ <li><a href="http://www.2ality.com/2013/05/quirk-array-like-objects.html" rel="nofollow">JavaScript quirk 8: array-like objects</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2014/01/17/fun-with-javascript-native-array-functions" rel="nofollow">有趣的javascript原生数组函数</a></li> 
+</ul> 
+<h2>正则表达式（Regular expressions）</h2> 
+<p>JavaScript内建支持正则表达式。他们被双斜线分隔：</p> 
+<pre><code>/^abc$/
+/[A-Za-z0-9]+/
+</code></pre> 
+<h3>方法 test()：测试是否匹配（Method test(): is there a match?）</h3> 
+<pre><code>&gt; /^a+b+$/.test('aaab')
+true
+&gt; /^a+b+$/.test('aaa')
+false
+</code></pre> 
+<h3>方法 exec()：匹配和捕获组（Method exec(): match and capture groups）</h3> 
+<pre><code>&gt; /a(b+)a/.exec('_abbba_aba_')
+[ 'abbba', 'bbb' ]
+</code></pre> 
+<p>返回的数组第一项（索引为0）是完整匹配，捕获的第一个分组在第二项（索引为1），等。<a href="http://www.2ality.com/2011/04/javascript-overview-of-regular.html" rel="nofollow">有一种方法</a>可以反复调用获取所有匹配。</p> 
+<h3>方法 replace()：搜索并替换（Method replace(): search and replace）</h3> 
+<pre><code>&gt; '&lt;a&gt; &lt;bbb&gt;'.replace(/&lt;(.*?)&gt;/g, '[$1]')
+'[a] [bbb]'
+</code></pre> 
+<p>replace的第一个参数必须是正则表达式，并且开启全局搜索（/g 标记），否则仅第一个匹配项会被替换。有<a href="http://www.2ality.com/2011/04/javascript-overview-of-regular.html" rel="nofollow">一种方法</a>使用一个函数来计算替换项。</p> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2011/04/javascript-overview-of-regular.html" rel="nofollow">JavaScript: an overview of the regular expression API</a></li> 
+ <li><a href="http://tech.pro/tutorial/1214/javascript-regular-expression-enlightenment" rel="nofollow">JavaScript Regular Expression Enlightenment</a> [by Cody Lindley]</li> 
+</ul> 
+<h2>数学（Math）</h2> 
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" rel="nofollow">Math</a>是一个有算数功能的对象。例如：</p> 
+<pre><code>&gt; Math.abs(-2)
+2
+
+&gt; Math.pow(3, 2)  // 3^2
+9
+
+&gt; Math.max(2, -1, 5)
+5
+
+&gt; Math.round(1.9)
+2
+
+&gt; Math.cos(Math.PI)  // 预定义常量π
+-1
+</code></pre> 
+<h2>标准库的其他功能（Other functionality of the standard library）</h2> 
+<p>JavaScript标准库相对简单，但有很多其他东西你可以使用：</p> 
+<ul> 
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" rel="nofollow">Date</a>：日期构造函数，主要功能有转换和创建日期字符串，访问日期组成部分（年，小时等）。</li> 
+ <li><a href="http://www.2ality.com/2011/08/json-api.html" rel="nofollow">JSON</a>：一个对象，功能是转换和生成JSON数据。</li> 
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/console" rel="nofollow">console.*</a> 方法：浏览器的具体方法，不是语言成分的部分，但他们也可以在<a href="http://nodejs.org/api/stdio.html" rel="nofollow">Node.js</a>中工作。</li> 
+</ul> 
+<h2>下一步学什么？</h2> 
+<p>在你学会了这篇文章的基础教程后，你可以转到大部分章节末尾提到的高级教程。此外，我建议你看下面的资源：</p> 
+<ul> 
+ <li>Style guides: I have written a <a href="http://www.2ality.com/2013/07/meta-style-guide.html" rel="nofollow">guide to style guides</a>.</li> 
+ <li><a href="http://underscorejs.org/" rel="nofollow">Underscore.js</a>: 一个弥补JavaScript标准库缺少的功能的库</li> 
+ <li><a href="http://jsbooks.revolunet.com/" rel="nofollow">JSbooks – free JavaScript books</a></li> 
+ <li><a href="http://uptodate.frontendrescue.org/" rel="nofollow">Frontend rescue: how to keep up to date on frontend technologies</a></li> 
+ <li><a href="http://yanhaijing.com/" rel="nofollow">http://yanhaijing.com</a> 当然还有我的博客也非常不错哦</li> 
+ <li><a href="http://yanhaijing.com/es5" rel="nofollow">http://yanhaijing.com/es5 </a>如果你想成为高手，我建议阅读ecmascript 规范</li> 
+ <li><a href="http://yanhaijing.com/javascript/2013/12/11/24-JavaScript-best-practices-for-beginners" rel="nofollow">给javascript初学者的24条最佳实践</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2014/04/23/seven-javascript-quirks-i-wish-id-known-about" rel="nofollow">我希望我知道的七个JavaScript技巧</a></li> 
+</ul> 
+<h2>推荐阅读</h2> 
+<p><br><br><br></p> 
+<h2>欢迎反馈</h2> 
+<p>我尝试找到JavaScript的一个最理想子集。我成功了吗？需要增删一些东西吗？如果你是一个JavaScript新手，我特别想听听你的意见：这篇文章是非常容易理解吗？或是你在某些地方卡住？</p> 
+<h3>一起交流吧</h3> 
+<ul> 
+ <li><p>GitHub家园 225932282，Git/GitHub爱好者的天堂，欢迎有兴趣的同学加入 <a target="_blank" href="http://url.cn/OZZ7bw" rel="nofollow"><img border="0" src="/action/blog/img_proxy?url=http%3A%2F%2Fpub.idqqimg.com%2Fwpa%2Fimages%2Fgroup.png" alt="github 家园" title="github 家园"></a></p></li> 
+ <li><p>CSS家园 188275051，Web开发者（前后端）的天堂，欢迎有兴趣的同学加入<a target="_blank" href="http://url.cn/OXkoEC" rel="nofollow"><img border="0" src="/action/blog/img_proxy?url=http%3A%2F%2Fpub.idqqimg.com%2Fwpa%2Fimages%2Fgroup.png" alt="CSS家园" title="CSS家园"></a></p></li> 
+</ul> 
+<h2>其他</h2> 
+<h3>关于</h3> 
+<p>本文是基于 <a href="http://www.2ality.com/2013/06/basic-javascript.html" rel="nofollow">http://www.2ality.com/2013/06/basic-javascript.html</a> 翻译创作的。</p> 
+<h3>关于作者</h3> 
+<p>颜海镜90后一枚，活跃在各个技术社区，常以歪脖无脸男作为头像，专注Web前端已有三个年头，关注HTML/CSS/JavaScript等相关技术，坚信Web赢在未来，<a href="http://yanhaijing.com" rel="nofollow">http://yanhaijing.com</a> 是我的个人博客。</p> 
+<p><a href="http://yanhaijing.com/yan_about.html" rel="nofollow">这里</a>有关于作者的详细信息</p> 
+<h3>鸣谢</h3> 
+<p>在此感谢下列人员的支持</p> 
+<ul> 
+ <li><a href="http://www.2ality.com/2013/06/basic-javascript.html" rel="nofollow">2ality</a></li> 
+ <li><a href="http://justjavac.com/" rel="nofollow">justjavac</a></li> 
+ <li><a href="http://weibo.com/wsluyu2011" rel="nofollow">散步的鱼</a></li> 
+</ul> 
+<h3>版权信息</h3> 
+<p>{% include copyright %}</p>
+			</div>
+
+																																		<h2 id="text_64523" class="sin_target">JavaScript入门教程</h2>
+<div class="sin_text">
+    					<p>这是我所知道最完整最简洁的JavaScript基础教程。</p> 
+<p>本文将带你尽快走进JavaScript的世界——前提是你有一些编程经验的话。本文试图描述这门语言的最小子集。我给这个子集起名叫做“JavaScript简易教程”，并推荐那些准备深入阅读细节和高级技巧之前的新手阅读。合抱之木生于毫末，九层之台起于垒土，欲速则不达。本文的最后会提出如何进一步学习。</p> 
+<p><strong>警告：</strong>下面是我所描述的规则集和最佳实践。我喜欢整洁清晰（例如，你可以随时通过下面的目录快速导航）。横看成岭侧成峰，远近高低各不同，虽然规则是无懈可击的，但不可避免——每个人的理解会各不相同。</p> 
+<h2>目录</h2> 
+<ol> 
+ <li><a href="http://www.oschina.net#sect_conventions" rel="nofollow">本文约定</a></li> 
+ <li><a href="http://www.oschina.net#sect_nature" rel="nofollow">语言的性质</a></li> 
+ <li><a href="http://www.oschina.net#sect_syntax" rel="nofollow">语法</a></li> 
+ <li><a href="http://www.oschina.net#sect_variables_assignment" rel="nofollow">变量和赋值</a></li> 
+ <li><a href="http://www.oschina.net#sect_values" rel="nofollow">值</a></li> 
+ <li><a href="http://www.oschina.net#sect_booleans" rel="nofollow">布尔</a></li> 
+ <li><a href="http://www.oschina.net#sect_numbers" rel="nofollow">数字</a></li> 
+ <li><a href="http://www.oschina.net#sect_strings" rel="nofollow">字符串</a></li> 
+ <li><a href="http://www.oschina.net#sect_statements" rel="nofollow">语句</a></li> 
+ <li><a href="http://www.oschina.net#sect_functions" rel="nofollow">函数</a></li> 
+ <li><a href="http://www.oschina.net#sect_exceptions" rel="nofollow">异常处理</a></li> 
+ <li><a href="http://www.oschina.net#sect_strict_mode" rel="nofollow">严格模式</a></li> 
+ <li><a href="http://www.oschina.net#sect_var_scope_closures" rel="nofollow">变量作用域和闭包</a></li> 
+ <li><a href="http://www.oschina.net#sect_objects" rel="nofollow">对象和继承</a></li> 
+ <li><a href="http://www.oschina.net#sect_arrays" rel="nofollow">数组</a></li> 
+ <li><a href="http://www.oschina.net#sect_regexp" rel="nofollow">正则表达式</a></li> 
+ <li><a href="http://www.oschina.net#sect_math" rel="nofollow">数学</a></li> 
+ <li><a href="http://www.oschina.net#sect_standard_library" rel="nofollow">标准库的其他功能</a></li> 
+ <li><a href="http://www.oschina.net#sect_learn_next" rel="nofollow">下一步学什么？</a></li> 
+</ol> 
+<h2>本文约定（Conventions used in this blog post）</h2> 
+<h3>命令行交互（Command line interaction）</h3> 
+<p>每当我介绍一个新概念，我都会尝试通过JavaScript命令行进行演示。像下面这样：</p> 
+<pre><code>&gt; 3 + 4
+  7
+</code></pre> 
+<p>大于号后面的文本是用户输入内容。其他的都是JavaScript引擎的输出内容。此外，也可以使用console.log()来向控制台打印数据（这种方法可以在大部分JavaScript引擎中工作，包括Node.js）.</p> 
+<h3>查找文档（Finding documentation）</h3> 
+<p>有时你会看到一些函数或方法有超链接，你应该清楚他们的工作原理。如果没有，可以在<a href="https://developer.mozilla.org/en-US/" rel="nofollow">Mozilla Developer Network</a> (MDN)上查看细节，你也可以使用Google在MDN上查找文档。例如，下面是通过Google搜索数组的push()方法的例子：</p> 
+<p><a href="https://www.google.com/search?q=mdn+array+push" rel="nofollow">mdn array push</a></p> 
+<h2>语言的性质（The nature of the language）</h2> 
+<p>本节对JavaScript的性质做简要介绍，以帮你理解一些疑问。</p> 
+<h3>JavaScript 和 ECMAScript（JavaScript versus ECMAScript）</h3> 
+<p>编程语言称为JavaScript，语言标准被称为ECMAScript。他们有不同名字的原因是因为“Java”已经被注册为商标（属于Oracle）。目前，只有Mozilla被正式允许使用“JavaScript”名称，因为很久以前他们得到一份许可。因此，开放的语言标准拥有不同的名字。当前的JavaScript版本是ECMAScript 5，ECMAScript 6当前是<a href="http://www.2ality.com/2012/11/guide-esnext.html" rel="nofollow">开发版</a>。</p> 
+<h3>影响（Influences）</h3> 
+<p>JavaScript之父，Brendan Eich 别无选择必须<a href="http://yanhaijing.com/javascript/2013/06/22/javascript-designing-a-language-in-10-days" rel="nofollow">迅速创建一门语言</a>。（否则，会更糟糕，Netscape将使用其他技术）。他借鉴了几门其他语言：</p> 
+<ul> 
+ <li>JavaScript借鉴了Java的语法和如何区分<a href="http://www.oschina.net#sect_prim_vs_obj" rel="nofollow">原始值和对象</a>。</li> 
+ <li>JavaScript的函数设计受Scheme和AWK的启发——他们（的函数）都是第一类（first-class）对象，并且在语言中广泛使用。<a href="http://www.oschina.net#sect_closures" rel="nofollow">闭包</a>使他们（函数）变成强大的工具。</li> 
+ <li>Self影响了JavaScript独一无二的面向对象编程(OOP)风格。它的<a href="http://www.2ality.com/2011/06/prototypes-as-classes.html" rel="nofollow">核心思想</a>（在这里我们没有提到）非常优雅，基于此创建的语言非常少。但后面会提到一个<a href="http://www.oschina.net#sect_constructors" rel="nofollow">简单的模式</a>照顾大部分用例。JavaScript面向对象编程的杀手级特性是你可以直接创建对象。不需要先创建类或其他类似的东西。</li> 
+ <li>Perl和Python<a href="http://www.2ality.com/2013/02/javascript-influences.html" rel="nofollow">影响了</a>JavaScript字符串，数组和正则表达式的操作。</li> 
+</ul> 
+<p>JavaScript直到ECMAScript 3才加入异常处理，这解释了为什么这门语言经常自动转换类型和经常静默失败：最初没有抛出异常的功能。</p> 
+<p>一方面，JavaScript有很多怪癖，并且缺失很多功能（块级变量作用域（block-sciped variables），模块（modules）支持子类型（subtyping）等）。另一方面，它有几个非常强大的特性，允许你弥补上面的问题。在其他语言中，你要学习语言特性。在JavaScript中，你需要经常学习模式代替。</p> 
+<h3>深入阅读（Further reading）</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2011/03/javascript-how-it-all-began.html" rel="nofollow">JavaScript: how it all began</a></li> 
+ <li><a href="http://www.2ality.com/2012/09/javascript-glass-half-full.html" rel="nofollow">JavaScript: the glass is half full</a> [什么让JavaScript如此吸引人？]</li> 
+ <li><a href="http://www.2ality.com/2011/06/ecmascript.html" rel="nofollow">ECMAScript: ES.next versus ES 6 versus ES Harmony</a> [包括ECMAScript版本的一个简史]</li> 
+ <li><a href="http://www.2ality.com/2013/02/javascript-influences.html" rel="nofollow">Perl and Python influences in JavaScript</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2013/06/22/javascript-designing-a-language-in-10-days" rel="nofollow">Javascript:10天设计一门语言</a></li> 
+</ul> 
+<h2>语法（Syntax）</h2> 
+<p>这节介绍一些JavaScript的基本语法规则。</p> 
+<h3>语句和表达式（Statements versus expressions）</h3> 
+<p>了解JavaScript的语法，先来了解两个主要的语法类型：语句和表达式。</p> 
+<ul> 
+ <li><p>语句通常“做某些事情”。程序是一组语句序列。举个例子，下面声明（创建）一个变量 foo：<br> var foo;</p></li> 
+ <li><p>表达式产生值。他们通常位于赋值操作的右边，函数参数，等。举个例子：<br> 3 * 7</p></li> 
+</ul> 
+<p>语句和表达式之间的区别最好通过实例说明，JavaScript（像Java）有两种不同的方式实现if-then-else。一种是用语句：</p> 
+<pre><code>var x;
+if (y &gt;= 0) {
+    x = y;
+} else {
+    x = -y;
+}
+</code></pre> 
+<p>另一种是表达式：</p> 
+<pre><code>var x = y &gt;= 0 ? y : -y;
+</code></pre> 
+<p>你可以将后者作为函数参数（但前者不行）：</p> 
+<pre><code>myFunction(y &gt;= 0 ? y : -y)
+</code></pre> 
+<p>最后，每当JavaScript期待一个语句，你也可以用一个表达式代替。例如：</p> 
+<pre><code>foo(bar(7, 1));
+</code></pre> 
+<p><code>foo(...);</code>是一个语句（也叫做表达式语句），<code>bar(7, 1)</code>是一个表达式。他们都实现函数调用。</p> 
+<h3>流程控制语句和语句块（Control flow statements and blocks）</h3> 
+<p>流程控制语句，其语句体可以是单条语句。举两个例子：</p> 
+<pre><code>if (obj !== null) obj.foo();
+
+while (x &gt; 0) x--;
+</code></pre> 
+<p>然而，任何语句总能被语句块代替，花括号包含零或多条语句。因此，你也可以这样写：</p> 
+<pre><code>if (obj !== null) {
+    obj.foo();
+}
+
+while (x &gt; 0) {
+    x--;
+}
+</code></pre> 
+<p>在本文中，我们只使用后一种方式。</p> 
+<h3>分号（Semicolons）</h3> 
+<p>JavaScript中的分号是<a href="http://www.2ality.com/2011/05/semicolon-insertion.html" rel="nofollow">可选的</a>。但省略（分号）可能会带来意想不到的结果，所以我建议你不要那样做。</p> 
+<p>正如上面所看到的，分号作为语句的结尾，但语句块不需要。仅有一种情况下你能看到语句块后面有分号——函数表达式后面的函数体块。表达式作为语句的结尾，后面是分号：</p> 
+<pre><code>var x = 3 * 7;
+var f = function () { };
+</code></pre> 
+<h3>注释（Comments）</h3> 
+<p>JavaScript的注释有两种形式：单行注释和多行注释。单行注释以//开头，以换行符结尾：</p> 
+<pre><code>x++; // 单行（single-line）注释
+</code></pre> 
+<p>多行注释用/**/包裹</p> 
+<pre><code>/* 
+ 这是多行注释
+ 多行哦
+ */
+</code></pre> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2012/09/expressions-vs-statements.html" rel="nofollow">Expressions versus statements in JavaScript</a></li> 
+ <li><a href="http://www.2ality.com/2011/05/semicolon-insertion.html" rel="nofollow">Automatic semicolon insertion in JavaScript</a></li> 
+</ul> 
+<h2>变量和赋值（Variables and assignment）</h2> 
+<p>JavaScript中的变量在使用前必须先声明，否则会报错引用错误（Reference Error）：</p> 
+<pre><code>var foo;  // 声明变量“foo”
+</code></pre> 
+<h3>赋值（Assignment）</h3> 
+<p>你可以在声明变量的同时为其赋值：</p> 
+<pre><code>var foo = 6;
+</code></pre> 
+<p>你也可以给已经存在的变量重新赋值：</p> 
+<pre><code>foo = 4;  // 更改变量的值
+</code></pre> 
+<h3>复合赋值操作符（Compount assignment operators）</h3> 
+<p>有很多复合赋值操作符，例如+=。下面的两个赋值操作等价：</p> 
+<pre><code>x += 1;
+x = x + 1;
+</code></pre> 
+<h3>标识符和变量名（Identifiers and variable names）</h3> 
+<p>标识符就是事物的名字，在JavaScript中他们扮演不同的语法角色。例如，变量的名称是一个标识符。</p> 
+<p>大体上，标识符的第一个字符可以是任何Unicode字符、美元标志符（$）或下划线（_）。后面可以是任意字符和数字。因此，下面全是合法的标识符：</p> 
+<pre><code>arg0
+_tmp
+$elem
+π
+</code></pre> 
+<p><strong>注意：</strong>首字符不能是数字，如果是数字的话，该如何区分是数字还是变量呢？</p> 
+<p>一些标识符是“保留关键字”——他们是语法的一部分，不能用作变量名：</p> 
+<blockquote> 
+ <p>arguments break case catch class const continue debugger default delete do else enum eval export extends false finally for function if implements import in instanceof interface let new null package private protected public return static super switch this throw true try typeof var void while with yield</p> 
+</blockquote> 
+<p>从技术上讲，下面三个标识符不是保留字，但也不应该作为变量名：</p> 
+<blockquote> 
+ <p>Infinity NaN undefined</p> 
+</blockquote> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://mathiasbynens.be/notes/javascript-identifiers" rel="nofollow">Valid JavaScript variable names</a> [by Mathias Bynens]</li> 
+</ul> 
+<h2>值（Values）</h2> 
+<p>JavaScript有所有我们期待的编程语言值类型：布尔，数字，字符串，数组等。JavaScript中的所有值都有属性。每个属性有一个键（或名字）和一个值。参考记录的域（fields of record）。你可以使用点（.）操作符读取属性：</p> 
+<pre><code>value.propKey
+</code></pre> 
+<p>举个例子：字符串“abc”有属性lenght（长度）。</p> 
+<pre><code> &gt; var str = 'abc';
+ &gt; str.length
+   3
+</code></pre> 
+<p>上面的代码也可以写成下面这样：</p> 
+<pre><code>&gt; 'abc'.length
+  3
+</code></pre> 
+<p>点操作符也可以用来给属性赋值：</p> 
+<pre><code> &gt; var obj = {};  // 空对象
+ &gt; obj.foo = 123; // 创建属性“foo”，设置它为123
+   123
+ &gt; obj.foo
+   123
+</code></pre> 
+<p>你也可以通过它（.）调用方法：</p> 
+<pre><code>&gt; 'hello'.toUpperCase()
+  'HELLO'
+</code></pre> 
+<p>上面，我们在值“hello”上面调用方法 toUpperCase()。</p> 
+<h3>原始类型值和对象（Primitive values versus objects）</h3> 
+<p>JavaScript定义了不同值之间的区别：</p> 
+<ul> 
+ <li>原始值包括：boolean，number，string，null和undefined，</li> 
+ <li>所有其他的值都是对象。实际上对象被定义为——所有不为原始值的值。</li> 
+</ul> 
+<p>两者之间的主要区别在于他们是如何被比较的：每一个对象有一个独一无二的标志，并且仅和自己相等：</p> 
+<pre><code>&gt; var obj1 = {};  // 一个空对象
+&gt; var obj2 = {};  // 另一个空对象
+&gt; obj1 === obj2
+  false
+&gt; obj1 === obj1
+  true
+</code></pre> 
+<p>相反，所有原始值只要编码值相同就被认为是相同的：</p> 
+<pre><code>&gt; var prim1 = 123;
+&gt; var prim2 = 123;
+&gt; prim1 === prim2
+  true
+</code></pre> 
+<p>接下来的两节会介绍原始值和对象的更多细节。</p> 
+<h3>原始类型值（Primitive values）</h3> 
+<p>下面全是原始类型值（简称：原始值）：</p> 
+<ul> 
+ <li><a href="http://www.oschina.net#sect_booleans" rel="nofollow">布尔类型</a>：true，false</li> 
+ <li><a href="http://www.oschina.net#sect_numbers" rel="nofollow">数字类型</a>：1736，1.351</li> 
+ <li><a href="http://www.oschina.net#sect_strings" rel="nofollow">字符串类型</a>: ‘abc’，“abc”</li> 
+ <li>两个“<a href="http://www.oschina.net#sect-non-values" rel="nofollow">无值（non-values）</a>”：undefined，null</li> 
+</ul> 
+<p>原始值的特征：</p> 
+<ul> 
+ <li><p><strong>值做比较时：</strong>“内容”做比较。</p> <pre><code>&gt; 3 === 3
+  true
+&gt; 'abc' === 'abc'
+  true
+</code></pre></li> 
+ <li><p><strong>无法更改：</strong>值的属性无法更改，无法添加和移除属性。</p> <pre><code>&gt; var str = 'abc';
+&gt; str.foo = 3; // try to create property `foo` ⇒ no effect
+&gt; str.foo  // unknown property
+  undefined 
+</code></pre></li> 
+</ul> 
+<p>(获取未知属性总返回undefined)<br>- <strong>原始值的集合是固定的（fixed set of values）：</strong>你不能自定义原始值。</p> 
+<h3>对象（Objects）</h3> 
+<p>所有非原始值（non-primitive）的值都是对象。最常见的几种对象类型是：</p> 
+<ul> 
+ <li><p><a href="http://www.oschina.net#sect_objects" rel="nofollow">简单对象</a>（类型是Object）能通过对象字面量创建：</p><p>{<br> firstName: ‘Jane’,<br> lastName: ‘Doe’<br>}</p></li> 
+</ul> 
+<p>上面的对象有两个属性：<code>firstName</code>属性的值是“Jane”，<code>lastName</code>属性的值是“Doe”。<br>- <a href="http://www.oschina.net#sect_arrays" rel="nofollow">数组</a>（类型是 Array）能通过数组字面量创建：</p> 
+<pre><code>[ 'apple', 'banana', 'cherry' ]
+</code></pre> 
+<p>上面的数组有三个元素，可以通过数字索引访问。例如“apple”的索引是0.<br>- <a href="http://www.oschina.net#sect_regexp" rel="nofollow">正则表达式对象</a>（类型是 RegExp）能通过正则表达式字面量创建。</p> 
+<pre><code>/^a+b+$/
+</code></pre> 
+<p>对象的特征：</p> 
+<ul> 
+ <li><p><strong>比较的是引用：</strong>比较的是标识符，每个值有自己的标识符。</p> <pre><code>&gt; {} === {}  // 两个不同的空对象
+  false
+
+&gt; var obj1 = {};
+&gt; var obj2 = obj1;
+&gt; obj1 === obj2
+  true
+</code></pre></li> 
+</ul> 
+<ul> 
+ <li><p><strong>默认可以更改。</strong></p> <pre><code> &gt; var obj = {};
+ &gt; obj.foo = 123;
+ &gt; obj.foo
+   123
+</code></pre></li> 
+</ul> 
+<p>-** 用户可扩展（user-extensible）：**你可以通过<a href="http://www.oschina.net#sect_constructors" rel="nofollow">构造函数</a>定义新的对象类型。</p> 
+<p>所有的数据结构（如<a href="http://www.oschina.net#sect_arrays" rel="nofollow">数组</a>）都是对象，但并不是所有的对象都是数据结构。例如：<a href="http://www.oschina.net#sect_regexp" rel="nofollow">正则表达式是对象</a>，但不是数据结构。</p> 
+<h3>undefined 和 null（undefined and null）</h3> 
+<p>多少有些不必要，JavaScript有两个“无值（non-values）”：undefined 和 null。</p> 
+<ul> 
+ <li><p>undefined的意思是“没有值（no value）”。未初始化的变量是undefined：</p> <pre><code>&gt; var foo;
+&gt; foo
+undefined
+</code></pre></li> 
+</ul> 
+<p>读取不存在的属性时，将返回undefined：</p> 
+<pre><code>    &gt; var obj = {}; // 空对象
+    &gt; obj.foo
+      undefined
+</code></pre> 
+<p>缺省的参数也是undefined：</p> 
+<pre><code>    &gt; function f(x) { return x }
+    &gt; f()
+      undefined
+</code></pre> 
+<ul> 
+ <li>null的意思是“没有对象（no object）”。它被用来表示对象的无值（参数，链上的对象等）。</li> 
+</ul> 
+<p>通常情况下你应该把undefined和null看成是等价的，如果他们代表相同意义的无值的话。检查他们的一种方式是通过严格比较：</p> 
+<pre><code>if (x === undefined || x === null) {
+    ...
+}
+</code></pre> 
+<p>另一种在实际中使用的方法是认为undefined 和 null 都是<a href="http://www.oschina.net#sect_truthy_falsy" rel="nofollow">false</a>：</p> 
+<pre><code>if (!x) {
+    ...
+}
+</code></pre> 
+<p><strong>警告：</strong>false，0，NaN 和 “” 都被当作false。</p> 
+<h3>包装类型（Wrapper types）</h3> 
+<p>对象类型的实例Foo（包括内建类型，例如Array和其他自定义类型）从对象Foo.prototype上获取方法。你可以通过读取这个方法的方式（不是调用）验证这点：</p> 
+<pre><code>&gt; [].push === Array.prototype.push
+  true
+</code></pre> 
+<p>相反，原始类型是没有类型的，所以每个原始类型有一个关联类型，称之为包装类型：</p> 
+<ul> 
+ <li><p>布尔值的包装类型是 Boolean。布尔值从Boolean.prototype上获取方法：</p> <pre><code>&gt; true.toString === Boolean.prototype.toString
+</code></pre> true</li> 
+</ul> 
+<p>注意包装类型名字的首字母是大写的B。如果在JavaScript中布尔值的类型可以访问，那么它可能会被转换为布尔对象。<br>- 数字值的包装类型是Number。<br>- 字符串值的包装类型是String。</p> 
+<p>包装类型也有实例（他们的实例是对象），但不常用。相反，包装类型有其他用处：如果你将他们作为函数调用，他们可以将值转换为原始类型。</p> 
+<pre><code>&gt; Number('123')
+  123
+&gt; String(true)
+  'true'
+</code></pre> 
+<h3>通过typeof 和 instanceof 将值分类（Categorizing values via typeof and instanceof）</h3> 
+<p>有两个操作符可以用来将值分类：typeof 主要用于原始值，instanceof 主要用于对象。</p> 
+<p><strong>typeof</strong> 使用方法如下：</p> 
+<pre><code>typeof «value»
+</code></pre> 
+<p><code>typeof</code>返回描述 value “类型”的一个字符串。例如：</p> 
+<pre><code>&gt; typeof true
+  'boolean'
+&gt; typeof 'abc'
+  'string'
+&gt; typeof {} // 空对象字面量
+  'object'
+&gt; typeof [] // 空数组字面量
+  'object'
+</code></pre> 
+<p>下面列出了typeof操作的所有结果：</p> 
+<table> 
+ <tbody> 
+  <tr> 
+   <td><strong>操作数</strong></td> 
+   <td><strong>结果</strong></td> 
+  </tr> 
+  <tr> 
+   <td>undefined</td> 
+   <td>'undefined'</td> 
+  </tr> 
+  <tr> 
+   <td>null</td> 
+   <td>'object'</td> 
+  </tr> 
+  <tr> 
+   <td>Boolean value</td> 
+   <td>'boolean'</td> 
+  </tr> 
+  <tr> 
+   <td>Number value</td> 
+   <td>'number'</td> 
+  </tr> 
+  <tr> 
+   <td>String value</td> 
+   <td>'string'</td> 
+  </tr> 
+  <tr> 
+   <td>Function</td> 
+   <td>'function'</td> 
+  </tr> 
+  <tr> 
+   <td>All other values</td> 
+   <td>'object'</td> 
+  </tr> 
+ </tbody> 
+</table> 
+<p>有两个结果和我们上面说的的原始值与对象是矛盾的：</p> 
+<ul> 
+ <li>函数的类型是“function”而不是“object”。鉴于函数（类型为“function”）是对象（类型是对象）的子类型，这不是一个错误。</li> 
+ <li>null的类型是“object”。这是一个bug，但从没被修复，因为修复后会破坏现有的代码。</li> 
+</ul> 
+<p><strong>instanceof</strong>使用方法如下：</p> 
+<pre><code>«value» instanceof «Constr»
+</code></pre> 
+<p>如果 value 是一个对象，并且value 是由构造函数Constr创建的（参考：类）。例如：</p> 
+<pre><code>&gt; var b = new Bar();  // 通过构造函数Bar创建对象
+&gt; b instanceof Bar
+  true
+&gt; {} instanceof Object
+  true
+&gt; [] instanceof Array
+  true
+&gt; [] instanceof Object  // 数字是对象的子类型
+  true
+</code></pre> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2013/01/categorizing-values.html" rel="nofollow">Categorizing values in JavaScript</a></li> 
+ <li><a href="http://www.2ality.com/2011/11/improving-typeof.html" rel="nofollow">Improving the JavaScript typeof operator</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2014/01/05/exploring-the-abyss-of-null-and-undefined-in-javascript" rel="nofollow">探索javascript中null和undefined的深渊</a></li> 
+</ul> 
+<h2>布尔（Booleans）</h2> 
+<p>布尔类型原始值包括true和false。下面的操作符产生布尔值：</p> 
+<ul> 
+ <li>二元逻辑运算符：&amp;&amp;（与），||（或）</li> 
+ <li>前缀逻辑运算符：!（非）</li> 
+ <li>等值运算符：=== !== == !=</li> 
+ <li>比较运算符（字符串或数字）：&gt; &gt;= &lt; &lt;=</li> 
+</ul> 
+<h3>真值和假值（Truthy and falsy）</h3> 
+<p>每当JavaScript希望一个布尔值时（例如：if语句的条件），可以使用任何值。它将被理解（转换）为true或false。下面的值被理解为false：</p> 
+<ul> 
+ <li>undefined, null</li> 
+ <li>布尔: false</li> 
+ <li>数字: -0, NaN</li> 
+ <li>字符串: ’’</li> 
+</ul> 
+<p>所有其他值被认为true。被理解为false的值称为假值（falsy），被理解为true的值称为真值（truthy）。可以使用Boolean作为函数，测试值被理解为什么。</p> 
+<pre><code>&gt; Boolean(undefined)
+  false
+&gt; Boolean(0)
+  false
+&gt; Boolean(3)
+  true
+</code></pre> 
+<h3>二元逻辑运算符（Binary logical operators）</h3> 
+<p>JavaScript中的二元逻辑运算符是短路运算——如果第一个操作数可以确定结果，第二个操作数将不被验证（运算）。例如，在下面的代码中，函数foo()永远不会被调用。</p> 
+<pre><code>false &amp;&amp; foo()
+true  || foo()
+</code></pre> 
+<p>此外，二元逻辑运算符会返回操作数中的一个——可能是一个布尔值，也可能不是。一张真值表用来决定返回哪个值：</p> 
+<ul> 
+ <li><p>与：如果第一个操作数是假值，返回第一个。否则返回第二个操作数。</p> <pre><code>&gt; NaN &amp;&amp; 'abc'
+  NaN
+&gt; 123 &amp;&amp; 'abc'
+  'abc'
+</code></pre></li> 
+ <li><p>或：如果第一个操作数是真值，返回第一个。否则，返回第二个操作数。</p> <pre><code>&gt; 'abc' || 123
+  'abc'
+&gt; '' || 123
+  123
+</code></pre></li> 
+</ul> 
+<h3>等值运算符（Equality operators）</h3> 
+<p>在JavaScript中检测相等，你可以使用严格相等（===）和严格不等（!==）。或者你也可以使用非严格相等（==）和非严格不等（!=）。经验规则：总是用严格运算符，假装非严格运算符不存在。严格相等更安全。</p> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2011/06/javascript-equality.html" rel="nofollow">Equality in JavaScript: === versus ==</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2014/04/25/strict-equality-exemptions" rel="nofollow">在JavaScript中什么时候使用==是正确的？</a></li> 
+</ul> 
+<h2>数字（Numbers）</h2> 
+<p>JavaScript中的所有数字都是浮点型（虽然大部分的JavaScript引擎内部也使用整数）。至于为什么这样设计，查看这里（<a href="http://yanhaijing.com/javascript/2014/03/14/what-every-javascript-developer-should-know-about-floating-points" rel="nofollow">每一个JavaScript开发者应该了解的浮点知识</a>）。</p> 
+<pre><code>&gt; 1 === 1.0
+  true
+</code></pre> 
+<p>特殊数字：</p> 
+<ul> 
+ <li><p>NaN (“不是一个数字 not a number”): 错误值。</p> <pre><code>&gt; Number('xyz')  // 'xyz' 不能被转换为数字
+  NaN
+</code></pre></li> 
+ <li><p>Infinity：也是最大错误值（溢出）.</p> <pre><code>&gt; 3 / 0
+  Infinity
+&gt; Math.pow(2, 1024)  // 数字太大了
+  Infinity
+</code></pre></li> 
+</ul> 
+<p>Infinity 有时很有用，因为它比任何其他数字都大。同样，-Infinity 比其他任何数字都小。<br>- JavaScript有<a href="http://www.2ality.com/2012/03/signedzero.html" rel="nofollow">两个零</a>，+0 和 -0。它（js引擎）通常不让你看到，并简单将两个零都显示为0：</p> 
+<pre><code>    &gt; +0
+      0
+    &gt; -0
+      0
+</code></pre> 
+<p>因此最好假装只有一个零（正如我们看到假值时所做的那样：-0 和 +0 都是假值）。</p> 
+<h3>运算符（Operators）</h3> 
+<p>JavaScript中有下列<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators" rel="nofollow">算数运算符</a>：</p> 
+<ul> 
+ <li>加: number1 + number2</li> 
+ <li>减: number1 - number2</li> 
+ <li>乘: number1 * number2</li> 
+ <li>除: number1 / number2</li> 
+ <li>模: number1 % number2</li> 
+ <li>自增: ++variable, variable++</li> 
+ <li>自减: –variable, variable–</li> 
+ <li>负值: -value</li> 
+ <li>正值（转换为数字）: +value</li> 
+</ul> 
+<p>全局对象<a href="http://www.oschina.net#sect_math" rel="nofollow">Math</a>通过函数提供更多算数运算操作。</p> 
+<p>JavaScript中也有<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators" rel="nofollow">位运算符</a>（例如：位与 &amp;）。</p> 
+<h3>深入阅读</h3> 
+<p>在2ality有<a href="http://www.2ality.com/search/label/numbers" rel="nofollow">一系列</a>博文介绍这些内容，例如：</p> 
+<ul> 
+ <li><a href="http://www.2ality.com/2012/04/number-encoding.html" rel="nofollow">How numbers are encoded in JavaScript</a></li> 
+ <li><a href="http://www.2ality.com/2012/03/signedzero.html" rel="nofollow">JavaScript’s two zeros</a></li> 
+ <li><a href="http://www.2ality.com/2012/02/js-integers.html" rel="nofollow">Integers and shift operators in JavaScript</a></li> 
+ <li><a href="http://www.2ality.com/2012/02/nan-infinity.html" rel="nofollow">NaN and Infinity in JavaScript</a></li> 
+ <li><a href="http://www.2ality.com/2012/07/large-integers.html" rel="nofollow">Working with large integers in JavaScript</a></li> 
+</ul> 
+<h2>字符串（Strings）</h2> 
+<p>字符串可以直接通过字符串字面量创建。这些字面量被单引号或双引号包裹。反斜线（\）转义字符并且产生一些控制字符。例如：</p> 
+<pre><code>'abc'
+"abc"
+
+'Did she say "Hello"?'
+"Did she say \"Hello\"?"
+
+'That\'s nice!'
+"That's nice!"
+
+'Line 1\nLine 2'  // 换行
+'Backlash: \\'
+</code></pre> 
+<p>可以通过方括号访问单个字符：</p> 
+<pre><code>&gt; var str = 'abc';
+&gt; str[1]
+  'b'
+</code></pre> 
+<p>length属性是字符串的字符数量。</p> 
+<pre><code>&gt; 'abc'.length
+  3
+</code></pre> 
+<p><strong>提醒：</strong>字符串是不可变的，如果你想改变现有字符串，你需要创建一个新的字符串。</p> 
+<h3>字符串运算符（String operators）</h3> 
+<p>字符串可以通过加号操作符（+）拼接，如果其中一个操作数为字符串，会将另一个操作数也转换为字符串。</p> 
+<pre><code>&gt; var messageCount = 3;
+&gt; 'You have '+messageCount+' messages'
+  'You have 3 messages'
+</code></pre> 
+<p>连续执行拼接操作可以使用 += 操作符：</p> 
+<pre><code>&gt; var str = '';
+&gt; str += 'Multiple ';
+&gt; str += 'pieces ';
+&gt; str += 'are concatenated.';
+&gt; str
+  'Multiple pieces are concatenated.'
+</code></pre> 
+<h3>字符串方法（String methods）</h3> 
+<p>字符串有许多有用的<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/prototype" rel="nofollow">方法</a>。例如：</p> 
+<pre><code>&gt; 'abc'.slice(1)  // 复制子字符串
+  'bc'
+&gt; 'abc'.slice(1, 2)
+  'b'
+
+&gt; '\t xyz  '.trim()  // 移除空白字符
+  'xyz'
+
+&gt; 'mjölnir'.toUpperCase()
+  'MJÖLNIR'
+
+&gt; 'abc'.indexOf('b')  // 查找字符串
+  1
+&gt; 'abc'.indexOf('x')
+  -1
+</code></pre> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2011/10/string-concatenation.html" rel="nofollow">String concatenation in JavaScript</a></li> 
+ <li><a href="http://www.2ality.com/2012/09/javascript-quotes.html" rel="nofollow">JavaScript: single quotes or double quotes?</a></li> 
+</ul> 
+<h2>语句（Statements）</h2> 
+<h3>条件（Conditionals）</h3> 
+<p>if语句通过布尔条件决定执行那个分支：</p> 
+<pre><code>if (myvar === 0) {
+    // then
+}
+
+if (myvar === 0) {
+    // then
+} else {
+    // else
+}
+
+if (myvar === 0) {
+    // then
+} else if (myvar === 1) {
+    // else-if
+} else if (myvar === 2) {
+    // else-if
+} else {
+    // else
+}
+</code></pre> 
+<p>下面的switch语句，furit的值决定那个分支被执行。</p> 
+<pre><code>switch (fruit) {
+    case 'banana':
+        // ...
+        break;
+    case 'apple':
+        // ...
+        break;
+    default:  // 所有其他情况
+        // ...
+}
+</code></pre> 
+<h3>循环（Loops）</h3> 
+<p>for 循环的格式如下：</p> 
+<pre><code>for(初始化; 当条件成立时循环; 下一步操作)
+</code></pre> 
+<p>例子：</p> 
+<pre><code>for (var i=0; i &lt; arr.length; i++) {
+    console.log(arr[i]);
+}
+</code></pre> 
+<p>当条件成立时while循环继续循环它的循环体。</p> 
+<pre><code>// 和上面的for循环相等
+var i = 0;
+while (i &lt; arr.length) {
+    console.log(arr[i]);
+    i++;
+}
+</code></pre> 
+<p>当条件成立时，do-while循环继续循环。由于条件位于循环体之后，所以循环体总是被至少至少执行一次。</p> 
+<pre><code>do {
+    // ...
+} while(条件);
+</code></pre> 
+<p><strong>在所有的循环中：</strong></p> 
+<ul> 
+ <li>break中断循环</li> 
+ <li>continue开始一个新的循环迭代</li> 
+</ul> 
+<h2>函数（Functions）</h2> 
+<p>定义函数的一种方法是通过函数声明：</p> 
+<pre><code>function add(param1, param2) {
+    return param1 + param2;
+}
+</code></pre> 
+<p>上面的代码定义一个名称叫做add的函数，有两个参数param1和param2，并且返回参数的和。下面是如何调用这个函数：</p> 
+<pre><code>&gt; add(6, 1)
+  7
+&gt; add('a', 'b')
+  'ab'
+</code></pre> 
+<p>另一种定义add()函数的方法是通过函数表达式：</p> 
+<pre><code>var add = function (param1, param2) {
+    return param1 + param2;
+};
+</code></pre> 
+<p>函数表达式产生一个值，因此可以直接将函数作为参数传递给其他函数：</p> 
+<pre><code>someOtherFunction(function (p1, p2) { ... });
+</code></pre> 
+<h3>函数声明提升（Function declarations are hoisted）</h3> 
+<p>函数声明会被提升，他们全被移动到当前作用域开始之处。这允许你在函数声明之前调用它们：</p> 
+<pre><code>function foo() {
+    bar();  // 没问题，bar被提升
+    function bar() {
+        ...
+    }
+}
+</code></pre> 
+<p>注意：虽然变量声明也会被<a href="http://www.oschina.net#sect_var_scope_closures" rel="nofollow">提升</a>，但赋值的过程不会被提升：</p> 
+<pre><code>function foo() {
+    bar();  // 有问题，bar是undefined
+    var bar = function () {
+        // ...
+    };
+}
+</code></pre> 
+<h3>特殊变量arguments（The special variable arguments）</h3> 
+<p>在JavaScript中你可以调用任意函数并传递任意数量的参数——语言绝不会抱怨（参数检测）。都可以正常工作，然而，使所有参数可访问需要通过特殊变量 arguments。arguments 看起来像数组，但它没有数组的方法（称为类数组 array-like）。</p> 
+<pre><code>&gt; function f() { return arguments }
+&gt; var args = f('a', 'b', 'c');
+&gt; args.length
+3
+&gt; args[0]  // 获取索引为0的元素
+'a'
+</code></pre> 
+<h3>太多或太少参数（Too many or too few arguments）</h3> 
+<p>让我们通过下面的函数探索JavaScript中传递太多或太少参数时如何处理（函数 toArray在<a href="http://www.oschina.net#sect_toarray" rel="nofollow">后面提到</a>）</p> 
+<pre><code>function f(x, y) {
+    console.log(x, y);
+    console.log(toArray(arguments));
+}
+</code></pre> 
+<p>多出的参数将被忽略（可以通过arguments访问）：</p> 
+<pre><code>&gt; f('a', 'b', 'c')
+a b
+[ 'a', 'b', 'c' ]
+</code></pre> 
+<p>缺少的参数将会是undefined：</p> 
+<pre><code>&gt; f('a')
+a undefined
+[ 'a' ]
+&gt; f()
+undefined undefined
+[]
+</code></pre> 
+<h3>可选参数（Optional parameters）</h3> 
+<p>下面是一个常见模式，给参数设置默认值：</p> 
+<pre><code>function pair(x, y) {
+    x = x || 0;  // (*)
+    y = y || 0;
+    return [ x, y ];
+}
+</code></pre> 
+<p>在（*）这行，如果x是真值（除了：null，undefined 等），||操作符返回x。否则，它返回第二个操作数。</p> 
+<pre><code>&gt; pair()
+[ 0, 0 ]
+&gt; pair(3)
+[ 3, 0 ]
+&gt; pair(3, 5)
+[ 3, 5 ] 
+</code></pre> 
+<h3>强制数量（Enforcing an arity）</h3> 
+<p>如果你想强制参数的数量，你可以检测arguments.length：</p> 
+<pre><code>function pair(x, y) {
+    if (arguments.length !== 2) {
+        throw new Error('Need exactly 2 arguments');
+    }
+    ...
+}
+</code></pre> 
+<h3>将arguments 转换为数组（Converting arguments to an array）</h3> 
+<p>arguments 不是一个数组，它仅仅是<a href="http://www.2ality.com/2013/05/quirk-array-like-objects.html" rel="nofollow">类数组</a>（array-like）：它有一个length属性，并且你可以通过方括号索引方式访问它的元素。然而，你不能移除元素，或在它上面调用任何数组方法。因此，有时你需要将其转换为数组。这就是下面函数的作用。</p> 
+<pre><code>function toArray(arrayLikeObject) {
+    return [].slice.call(arrayLikeObject);
+}
+</code></pre> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2013/05/quirk-parameters.html" rel="nofollow">JavaScript quirk 5: parameter handling</a></li> 
+</ul> 
+<h2>异常处理（Exception handling）</h2> 
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch" rel="nofollow">异常处理</a>最常见的方式像下面这样：</p> 
+<pre><code>function throwException() {
+    throw new Error('Problem!');
+}
+
+try {
+    throwException();
+} catch (e) {
+    console.log(e);  // 错误：信息
+    console.log(e.stack);  // 非标准，但大部分浏览器支持
+}
+</code></pre> 
+<p>try分支包裹易出错的代码，如果try分支内部抛出异常，catch分支将会执行。</p> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2011/12/subtyping-builtins.html" rel="nofollow">Subtyping JavaScript builtins in ECMAScript 5 [especially relevant for errors]</a></li> 
+</ul> 
+<h2>严格模式（Strict mode）</h2> 
+<p><a href="http://www.2ality.com/2011/01/javascripts-strict-mode-summary.html" rel="nofollow">严格模式</a>开启检测和一些其他措施，使JavaScript变成更整洁的语言。推荐使用严格模式。为了开启严格模式，只需在JavaScript文件或script标签第一行添加如下语句：</p> 
+<pre><code>'use strict';
+</code></pre> 
+<p>你也可以在每个函数上选择性开启严格模式，只需将上面的代码放在函数的开头：</p> 
+<pre><code>function functionInStrictMode() {
+    'use strict';
+}
+</code></pre> 
+<p>下面的两小节看下严格模式的三大好处。</p> 
+<h3>明确错误（Explicit errors）</h3> 
+<p>让我们看一个例子，严格模式给我们明确的错误，否则JavaScript总是静默失败：下面的函数 f() 执行一些非法操作，它试图更改所有字符串都有的只读属性——length：</p> 
+<pre><code>function f() {
+    'abc'.length = 5;
+}
+</code></pre> 
+<p>当你调用上面的函数，它静默失败，赋值操作被简单忽略。让我们将 f() 在严格模式下运行：</p> 
+<pre><code>function f_strict() {
+    'use strict';
+    'abc'.length = 5;
+}
+</code></pre> 
+<p>现在浏览器报给我们一些错误：</p> 
+<pre><code>&gt; f_strict()
+TypeError: Cannot assign to read only property 'length' of abc
+</code></pre> 
+<h3>不是方法的函数中的this（this in non-method functions）</h3> 
+<p>在严格模式下，不作为方法的函数中的this值是undefined：</p> 
+<pre><code>function f_strict() {
+    'use strict';
+    return this;
+}
+console.log(f_strict() === undefined);  // true
+</code></pre> 
+<p>在非严格模式下，this的值是被称作全局对象（global object）（在浏览器里是window）：</p> 
+<pre><code>function f() {
+    return this;
+}
+console.log(f() === window);  // true
+</code></pre> 
+<h3>不再自动创建全局变量（No auto-created global variables）</h3> 
+<p>在非严格模式下，如果你给不存在的变量赋值，JavaScript会自动创建一个全局变量： </p> 
+<pre><code>&gt; function f() { foo = 5 }
+&gt; f()  // 不会报错
+&gt; foo
+5
+</code></pre> 
+<p>在严格模式下，这会产生一个错误：</p> 
+<pre><code>&gt; function f_strict() { 'use strict'; foo2 = 4; }
+&gt; f_strict()
+ReferenceError: foo2 is not defined
+</code></pre> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2011/01/javascripts-strict-mode-summary.html" rel="nofollow">JavaScript’s strict mode: a summary</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2013/12/28/demystifying-this-in-javascript" rel="nofollow">揭秘javascript中谜一样的this</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2014/04/30/javascript-this-keyword" rel="nofollow">JavaScript中的this关键字</a></li> 
+</ul> 
+<h2>变量作用域和闭包（Variable scoping and closures）</h2> 
+<p>在JavaScript中，你必须使用变量之前，通过var声明变量：</p> 
+<pre><code>&gt; var x;
+&gt; x = 3;
+&gt; y = 4;
+ReferenceError: y is not defined
+</code></pre> 
+<p>你可以用一条var语句声明和初始化多个变量：</p> 
+<pre><code>var x = 1, y = 2, z = 3;
+</code></pre> 
+<p>但我建议每个变量使用一条语句。因此，我将上面的语句重写为：</p> 
+<pre><code>var x = 1;
+var y = 2;
+var z = 3;
+</code></pre> 
+<p>由于提升（见下文），最好在函数顶部声明变量。</p> 
+<h3>变量和函数作用域（Variables are function-scoped）</h3> 
+<p>变量的作用域总是整个函数（没有块级作用域）。例如：</p> 
+<pre><code>function foo() {
+    var x = -3;
+    if (x &lt; 0) {  // (*)
+        var tmp = -x;
+        ...
+    }
+    console.log(tmp);  // 3
+}
+</code></pre> 
+<p>我们可以看到tmp变量不仅在（*）所在行的语句块存在，它在整个函数内都存在。</p> 
+<h3>变量提升（Variables are hoisted）</h3> 
+<p>变量声明会被提升：声明会被移到函数的顶部，但赋值过程不会。举个例子，在下面的函数中（*）行位置声明了一个变量。</p> 
+<pre><code>function foo() {
+    console.log(tmp); // undefined
+    if (false) {
+        var tmp = 3;  // (*)
+    }
+}
+</code></pre> 
+<p>在内部，上面的函数被执行像下面这样：</p> 
+<pre><code>function foo() {
+    var tmp;  // declaration is hoisted
+    console.log(tmp);
+    if (false) {
+        tmp = 3;  // assignment stays put
+    }
+}
+</code></pre> 
+<h3>闭包（Closures）</h3> 
+<p>每个函数保持和函数体内部变量的连接，甚至离开创建它的作用域之后。例如：</p> 
+<pre><code>function createIncrementor(start) {
+    return function () {  // (*)
+        return start++;
+    }
+}
+</code></pre> 
+<p>在（*）行开始的函数在它创建时保留上下文，并在内部保存一个start活动值：</p> 
+<pre><code>&gt; var inc = createIncrementor(5);
+&gt; inc()
+5
+&gt; inc()
+6
+&gt; inc()
+7
+</code></pre> 
+<p>闭包是一个函数加上和其作用域链的链接。因此，createIncrementor() 返回的是一个闭包。</p> 
+<h3>IIFE：模拟块级作用域（IIFE: Simulating block scoping）</h3> 
+<p>有时你想模拟一个块，例如你想将变量从全局作用域隔离。完成这个工作的模式叫做 IIFE(立即执行函数表达式(Immediately Invoked Function Expression))：</p> 
+<pre><code>(function () {  // 块开始
+    var tmp = ...;  // 非全局变量
+}());  // 块结束
+</code></pre> 
+<p>上面你会看到函数表达式被立即执行。外面的括号用来阻止它被解析成函数声明；只有函数表达式能被立即调用。函数体产生一个新的作用域并使 tmp 变为局部变量。</p> 
+<h3>闭包实现变量共享（Inadvertent sharing via closures）</h3> 
+<p>下面是个经典问题，如果你不知道，会让你费尽思量。因此，先浏览下，对问题有个大概的了解。</p> 
+<p>闭包保持和外部变量的连接，有时可能和你想像的行为不一致：</p> 
+<pre><code>var result = [];
+for (var i=0; i &lt; 5; i++) {
+    result.push(function () { return i });  // (*)
+}
+console.log(result[1]()); // 5 (不是 1)
+console.log(result[3]()); // 5 (不是 3)
+</code></pre> 
+<p>(*)行的返回值总是当前的i值，而不是当函数被创建时的i值。当循环结束后，i的值是5，这是为什么数组中的所有函数的返回值总是一样的。如果你想捕获当前变量的快照，你可以使用 IIFE：</p> 
+<pre><code>for (var i=0; i &lt; 5; i++) {
+    (function (i2) {
+        result.push(function () { return i2 });
+    }(i));  // 复制当前的i
+}
+</code></pre> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2012/11/var-statement-rules.html" rel="nofollow">Variable declarations: three rules you can break</a></li> 
+ <li><a href="http://www.2ality.com/2013/05/quirk-variable-scope.html" rel="nofollow">JavaScript quirk 6: the scope of variables</a></li> 
+ <li><a href="http://www.2ality.com/2013/05/quirk-closures.html" rel="nofollow">JavaScript quirk 7: inadvertent sharing of variables via closures</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2013/08/30/understanding-scope-and-context-in-javascript" rel="nofollow">认识javascript中的作用域和上下文</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2014/04/30/JavaScript-Scoping-and-Hoisting" rel="nofollow">JavaScript的作用域和提升机制</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2014/04/29/what-is-the-execution-context-in-javascript" rel="nofollow">了解JavaScript的执行上下文</a></li> 
+</ul> 
+<h2>对象和继承（Objects and inheritance）</h2> 
+<p>和所有的<a href="http://www.oschina.net#sect_values" rel="nofollow">值类型</a>一样，对象有属性。事实上，你可以将对象当作一组属性的集合，每个属性都是一对（键和值）。键是字符串，值可以是任意JavaScript值。到目前为止，我们仅仅见过键是<a href="http://www.oschina.net#identifiers" rel="nofollow">标识符</a>的属性，因为点操作符处理的键必须为标识符。在这节，你讲见到另一种访问属性的方法，能将任意字符串作为键。</p> 
+<h3>单个对象（Single objects）</h3> 
+<p>在JavaScript中，你可以直接创建对象，通过对象字面量：</p> 
+<pre><code>var jane = {
+    name: 'Jane',
+
+    describe: function () {
+        'use strict';
+        return 'Person named '+this.name;
+    }
+};
+</code></pre> 
+<p>上面的对象有两个属性：name 和 describe。你能读（“get”）和 写（“set”）属性：</p> 
+<pre><code>&gt; jane.name  // get
+'Jane'
+&gt; jane.name = 'John';  // set
+&gt; jane.newProperty = 'abc';  // 自动创建
+</code></pre> 
+<p>属性是函数如 describe 可以被当作方法调用。当调用他们时可以在它们内部通过this引用对象。</p> 
+<pre><code>&gt; jane.describe()  // 调用方法
+'Person named John'
+&gt; jane.name = 'Jane';
+&gt; jane.describe()
+'Person named Jane'
+</code></pre> 
+<p>in 操作符用来检测一个属性是否存在：</p> 
+<pre><code>&gt; 'newProperty' in jane
+true
+&gt; 'foo' in jane
+false
+</code></pre> 
+<p>若读取一个不存在的属性，将会得到undefined值。因此上面的两个检查也可以像下面这样：</p> 
+<pre><code>&gt; jane.newProperty !== undefined
+true
+&gt; jane.foo !== undefined
+false
+</code></pre> 
+<p>delete操作符用来删除一个属性：</p> 
+<pre><code>&gt; delete jane.newProperty
+true
+&gt; 'newProperty' in jane
+false
+</code></pre> 
+<h3>任意键属性（Arbitrary property keys）</h3> 
+<p>属性的键可以是任意字符串。到目前为止，我们看到的对象字面量中的和点操作符后的属性关键字。按这种方法你只能使用<a href="http://www.oschina.net#identifiers" rel="nofollow">标识符</a>。如果你想用其他任意字符串作为键名，你必须在对象字面量里加上引号，并使用方括号获取和设置属性。</p> 
+<pre><code>&gt; var obj = { 'not an identifier': 123 };
+&gt; obj['not an identifier']
+123
+&gt; obj['not an identifier'] = 456;
+</code></pre> 
+<p>方括号允许你动态计算属性关键字：</p> 
+<pre><code>&gt; var x = 'name';
+&gt; jane[x]
+'Jane'
+&gt; jane['na'+'me']
+'Jane'
+</code></pre> 
+<h3>引用方法（Extracting methods）</h3> 
+<p>如果你引用一个方法，它将失去和对象的连接。就其本身而言，函数不是方法，其中的this值为undefined（严格模式下）。</p> 
+<pre><code>&gt; var func = jane.describe;
+&gt; func()
+TypeError: Cannot read property 'name' of undefined
+</code></pre> 
+<p>解决办法是使用函数内置的bind()方法。它创建一个新函数，其this值固定为给定的值。</p> 
+<pre><code>&gt; var func2 = jane.describe.bind(jane);
+&gt; func2()
+'Person named Jane'
+</code></pre> 
+<h3>方法内部的函数（Functions inside a method）</h3> 
+<p>每个函数都有一个特殊变量this。如果你在方法内部嵌入函数是很不方便的，因为你不能从函数中访问方法的this。下面是一个例子，我们调用forEach循环一个数组：</p> 
+<pre><code>var jane = {
+    name: 'Jane',
+    friends: [ 'Tarzan', 'Cheeta' ],
+    logHiToFriends: function () {
+        'use strict';
+        this.friends.forEach(function (friend) {
+            // 这里的“this”是undefined
+            console.log(this.name+' says hi to '+friend);
+        });
+    }
+}
+</code></pre> 
+<p>调用 logHiToFriends 会产生错误：</p> 
+<pre><code>&gt; jane.logHiToFriends()
+TypeError: Cannot read property 'name' of undefined
+</code></pre> 
+<p>有两种方法修复这问题。</p> 
+<p>#1：将this存储在不同的变量。</p> 
+<pre><code>logHiToFriends: function () {
+    'use strict';
+    var that = this;
+    this.friends.forEach(function (friend) {
+        console.log(that.name+' says hi to '+friend);
+    });
+}
+</code></pre> 
+<p>#2：forEach的第二个参数允许提供this值。</p> 
+<pre><code>logHiToFriends: function () {
+    'use strict';
+    this.friends.forEach(function (friend) {
+        console.log(this.name+' says hi to '+friend);
+    }, this);
+}
+</code></pre> 
+<p>在JavaScript中函数表达式经常被用作函数参数。时刻小心函数表达式中的this。</p> 
+<h3>构造函数：对象工厂（Constructors: factories for objects）</h3> 
+<p>目前为止，你可能认为JavaScript的对象仅是键值的映射，通过JavaScript对象字面量可以得出这个观点，看起来很像其他语言中的地图/字典（map/dictionary）。然而，JavaScript对象也支持真正意义上的面向对象特性：继承（inheritance）。本节不会完全讲解JavaScript中继承的工作原理，但会给你以此为开始的简单模式。如果你想得到更多知识，请查阅这篇文章“<a href="http://www.2ality.com/2012/01/js-inheritance-by-example.html" rel="nofollow">JavaScript inheritance by example</a>”。</p> 
+<p>除了作为“真正”的函数和方法，函数还在JavaScript中扮演第三种角色：如果通过new操作符调用，他们会变为构造函数，对象的工厂。构造函数是对其他语言中的类的粗略模拟。约定俗成，构造函数的第一个字母大写。例如：</p> 
+<pre><code>// 设置实例数据
+function Point(x, y) {
+    this.x = x;
+    this.y = y;
+}
+// 方法
+Point.prototype.dist = function () {
+    return Math.sqrt(this.x*this.x + this.y*this.y);
+};
+</code></pre> 
+<p>我们看到构造函数分为两部分：首先，Point函数设置实例数据。其次，Point.prototype属性包含对象的方法。前者的数据是每个实例私有的，后面的数据是所有实例共享的。</p> 
+<p>我们通过new操作符调用Point：</p> 
+<pre><code>&gt; var p = new Point(3, 5);
+&gt; p.x
+3
+&gt; p.dist()
+5.830951894845301
+</code></pre> 
+<p>p是Point的一个实例：</p> 
+<pre><code>&gt; p instanceof Point
+true
+&gt; typeof p
+'object'
+</code></pre> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2012/01/objects-as-maps.html" rel="nofollow">The pitfalls of using objects as maps in JavaScript</a> [important, read soon]</li> 
+ <li><a href="http://www.2ality.com/2012/01/js-inheritance-by-example.html" rel="nofollow">JavaScript inheritance by example</a></li> 
+ <li><a href="http://www.2ality.com/2012/10/javascript-properties.html" rel="nofollow">Object properties in JavaScript</a> [advanced: each property has attributes that determine whether it is writable, etc.]</li> 
+ <li><a href="http://www.2ality.com/2012/03/private-data.html" rel="nofollow">Private data for objects in JavaScript</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2013/08/23/javascript-inheritance-how-to-shoot-yourself-in-the-foot-with-prototypes" rel="nofollow">Javascript继承 原型的陷阱</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2013/08/30/encapsulation-of-javascript" rel="nofollow">Javascript 封装问题</a></li> 
+</ul> 
+<h2>数组（Arrays）</h2> 
+<p>数组是数组元素的序列，能通过整数索引方法数组元素，数组索引从0开始。</p> 
+<h3>数组字面量（Array literals）</h3> 
+<p>数组字面量创建数组很方便：</p> 
+<pre><code>&gt; var arr = [ 'a', 'b', 'c' ];
+</code></pre> 
+<p>上面的数组有三个元素：分别是字符串“a”，“b”， “c”。你可以通过整数索引访问它们：</p> 
+<pre><code>&gt; arr[0]
+'a'
+&gt; arr[0] = 'x';
+&gt; arr
+[ 'x', 'b', 'c' ]
+</code></pre> 
+<p>length属性总表示一个数组有多少项元素。</p> 
+<pre><code>&gt; arr.length
+3
+</code></pre> 
+<p>除此之外它也可以用来从数组上移除尾部元素：</p> 
+<pre><code>&gt; arr.length = 2;
+&gt; arr
+[ 'x', 'b' ]
+</code></pre> 
+<p>in操作符也可以在数组上工作。</p> 
+<pre><code>&gt; 1 in arr // arr在索引为1处是否有元素？
+true
+&gt; 5 in arr // arr在索引为5处是否有元素？
+false
+</code></pre> 
+<p>值得注意的是数组是对象，因此可以有对象属性：</p> 
+<pre><code>&gt; arr.foo = 123;
+&gt; arr.foo
+123
+</code></pre> 
+<h3>数组方法（Array methods）</h3> 
+<p>数组有许多<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype" rel="nofollow">方法</a>。举些例子：</p> 
+<pre><code>&gt; var arr = [ 'a', 'b', 'c' ];
+
+&gt; arr.slice(1, 2)  // 复制元素
+[ 'b' ]
+&gt; arr.slice(1)
+[ 'b', 'c' ]
+
+&gt; arr.push('x')  // 在末尾添加一个元素
+4
+&gt; arr
+[ 'a', 'b', 'c', 'x' ]
+
+&gt; arr.pop()  // 移除最后一个元素
+'x'
+&gt; arr
+[ 'a', 'b', 'c' ]
+
+&gt; arr.shift()  // 移除第一个元素
+'a'
+&gt; arr
+[ 'b', 'c' ]
+
+&gt; arr.unshift('x')  // 在前面添加一个元素
+3
+&gt; arr
+[ 'x', 'b', 'c' ]
+
+&gt; arr.indexOf('b')  // 查找给定项在数组中的索引，若不存在返回-1
+1
+&gt; arr.indexOf('y') 
+-1
+
+&gt; arr.join('-')  // 将元素拼接为一个字符串
+'x-b-c'
+&gt; arr.join('')
+'xbc'
+&gt; arr.join()
+'x,b,c'
+</code></pre> 
+<h3>遍历数组（Iterating over arrays）</h3> 
+<p>有几种方法可以遍历数组元素。其中两个最重要的是 forEach 和 map。</p> 
+<p>forEach遍历整个数组，并将当前元素和它的索引传递给一个函数：</p> 
+<pre><code>[ 'a', 'b', 'c' ].forEach(
+    function (elem, index) {  // (*)
+        console.log(index + '. ' + elem);
+    });
+</code></pre> 
+<p>上面代码的输出</p> 
+<pre><code>0. a
+1. b
+2. c
+</code></pre> 
+<p>注意（*）行的函数参数是可省略的。例如：它可以只有一个参数 elem。</p> 
+<p>map创建一个新数组，通过给每个存在数组元素应用一个函数：</p> 
+<pre><code>&gt; [1,2,3].map(function (x) { return x*x })
+[ 1, 4, 9 ]
+</code></pre> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2012/12/arrays.html" rel="nofollow">Arrays in JavaScript</a></li> 
+ <li><a href="http://www.2ality.com/2013/05/quirk-array-like-objects.html" rel="nofollow">JavaScript quirk 8: array-like objects</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2014/01/17/fun-with-javascript-native-array-functions" rel="nofollow">有趣的javascript原生数组函数</a></li> 
+</ul> 
+<h2>正则表达式（Regular expressions）</h2> 
+<p>JavaScript内建支持正则表达式。他们被双斜线分隔：</p> 
+<pre><code>/^abc$/
+/[A-Za-z0-9]+/
+</code></pre> 
+<h3>方法 test()：测试是否匹配（Method test(): is there a match?）</h3> 
+<pre><code>&gt; /^a+b+$/.test('aaab')
+true
+&gt; /^a+b+$/.test('aaa')
+false
+</code></pre> 
+<h3>方法 exec()：匹配和捕获组（Method exec(): match and capture groups）</h3> 
+<pre><code>&gt; /a(b+)a/.exec('_abbba_aba_')
+[ 'abbba', 'bbb' ]
+</code></pre> 
+<p>返回的数组第一项（索引为0）是完整匹配，捕获的第一个分组在第二项（索引为1），等。<a href="http://www.2ality.com/2011/04/javascript-overview-of-regular.html" rel="nofollow">有一种方法</a>可以反复调用获取所有匹配。</p> 
+<h3>方法 replace()：搜索并替换（Method replace(): search and replace）</h3> 
+<pre><code>&gt; '&lt;a&gt; &lt;bbb&gt;'.replace(/&lt;(.*?)&gt;/g, '[$1]')
+'[a] [bbb]'
+</code></pre> 
+<p>replace的第一个参数必须是正则表达式，并且开启全局搜索（/g 标记），否则仅第一个匹配项会被替换。有<a href="http://www.2ality.com/2011/04/javascript-overview-of-regular.html" rel="nofollow">一种方法</a>使用一个函数来计算替换项。</p> 
+<h3>深入阅读</h3> 
+<ul> 
+ <li><a href="http://www.2ality.com/2011/04/javascript-overview-of-regular.html" rel="nofollow">JavaScript: an overview of the regular expression API</a></li> 
+ <li><a href="http://tech.pro/tutorial/1214/javascript-regular-expression-enlightenment" rel="nofollow">JavaScript Regular Expression Enlightenment</a> [by Cody Lindley]</li> 
+</ul> 
+<h2>数学（Math）</h2> 
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" rel="nofollow">Math</a>是一个有算数功能的对象。例如：</p> 
+<pre><code>&gt; Math.abs(-2)
+2
+
+&gt; Math.pow(3, 2)  // 3^2
+9
+
+&gt; Math.max(2, -1, 5)
+5
+
+&gt; Math.round(1.9)
+2
+
+&gt; Math.cos(Math.PI)  // 预定义常量π
+-1
+</code></pre> 
+<h2>标准库的其他功能（Other functionality of the standard library）</h2> 
+<p>JavaScript标准库相对简单，但有很多其他东西你可以使用：</p> 
+<ul> 
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" rel="nofollow">Date</a>：日期构造函数，主要功能有转换和创建日期字符串，访问日期组成部分（年，小时等）。</li> 
+ <li><a href="http://www.2ality.com/2011/08/json-api.html" rel="nofollow">JSON</a>：一个对象，功能是转换和生成JSON数据。</li> 
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/console" rel="nofollow">console.*</a> 方法：浏览器的具体方法，不是语言成分的部分，但他们也可以在<a href="http://nodejs.org/api/stdio.html" rel="nofollow">Node.js</a>中工作。</li> 
+</ul> 
+<h2>下一步学什么？</h2> 
+<p>在你学会了这篇文章的基础教程后，你可以转到大部分章节末尾提到的高级教程。此外，我建议你看下面的资源：</p> 
+<ul> 
+ <li>Style guides: I have written a <a href="http://www.2ality.com/2013/07/meta-style-guide.html" rel="nofollow">guide to style guides</a>.</li> 
+ <li><a href="http://underscorejs.org/" rel="nofollow">Underscore.js</a>: 一个弥补JavaScript标准库缺少的功能的库</li> 
+ <li><a href="http://jsbooks.revolunet.com/" rel="nofollow">JSbooks – free JavaScript books</a></li> 
+ <li><a href="http://uptodate.frontendrescue.org/" rel="nofollow">Frontend rescue: how to keep up to date on frontend technologies</a></li> 
+ <li><a href="http://yanhaijing.com/" rel="nofollow">http://yanhaijing.com</a> 当然还有我的博客也非常不错哦</li> 
+ <li><a href="http://yanhaijing.com/es5" rel="nofollow">http://yanhaijing.com/es5 </a>如果你想成为高手，我建议阅读ecmascript 规范</li> 
+ <li><a href="http://yanhaijing.com/javascript/2013/12/11/24-JavaScript-best-practices-for-beginners" rel="nofollow">给javascript初学者的24条最佳实践</a></li> 
+ <li><a href="http://yanhaijing.com/javascript/2014/04/23/seven-javascript-quirks-i-wish-id-known-about" rel="nofollow">我希望我知道的七个JavaScript技巧</a></li> 
+</ul> 
+<h2>推荐阅读</h2> 
+<p><br><br><br></p> 
+<h2>欢迎反馈</h2> 
+<p>我尝试找到JavaScript的一个最理想子集。我成功了吗？需要增删一些东西吗？如果你是一个JavaScript新手，我特别想听听你的意见：这篇文章是非常容易理解吗？或是你在某些地方卡住？</p> 
+<h3>一起交流吧</h3> 
+<ul> 
+ <li><p>GitHub家园 225932282，Git/GitHub爱好者的天堂，欢迎有兴趣的同学加入 <a target="_blank" href="http://url.cn/OZZ7bw" rel="nofollow"><img border="0" src="/action/blog/img_proxy?url=http%3A%2F%2Fpub.idqqimg.com%2Fwpa%2Fimages%2Fgroup.png" alt="github 家园" title="github 家园"></a></p></li> 
+ <li><p>CSS家园 188275051，Web开发者（前后端）的天堂，欢迎有兴趣的同学加入<a target="_blank" href="http://url.cn/OXkoEC" rel="nofollow"><img border="0" src="/action/blog/img_proxy?url=http%3A%2F%2Fpub.idqqimg.com%2Fwpa%2Fimages%2Fgroup.png" alt="CSS家园" title="CSS家园"></a></p></li> 
+</ul> 
+<h2>其他</h2> 
+<h3>关于</h3> 
+<p>本文是基于 <a href="http://www.2ality.com/2013/06/basic-javascript.html" rel="nofollow">http://www.2ality.com/2013/06/basic-javascript.html</a> 翻译创作的。</p> 
+<h3>关于作者</h3> 
+<p>颜海镜90后一枚，活跃在各个技术社区，常以歪脖无脸男作为头像，专注Web前端已有三个年头，关注HTML/CSS/JavaScript等相关技术，坚信Web赢在未来，<a href="http://yanhaijing.com" rel="nofollow">http://yanhaijing.com</a> 是我的个人博客。</p> 
+<p><a href="http://yanhaijing.com/yan_about.html" rel="nofollow">这里</a>有关于作者的详细信息</p> 
+<h3>鸣谢</h3> 
+<p>在此感谢下列人员的支持</p> 
+<ul> 
+ <li><a href="http://www.2ality.com/2013/06/basic-javascript.html" rel="nofollow">2ality</a></li> 
+ <li><a href="http://justjavac.com/" rel="nofollow">justjavac</a></li> 
+ <li><a href="http://weibo.com/wsluyu2011" rel="nofollow">散步的鱼</a></li> 
+</ul> 
+<h3>版权信息</h3> 
+<p>{% include copyright %}</p>
+			</div>
+
+																					
+					</div>
+		<div class="clear"></div>
+	</div>
+	<div id="bottom_begin"></div>
+	<div class="sin_footer">
+		<div>
+			Powered by <a href="http://www.oschina.net" target="_blank">开源中国</a>
+		</div>
+	</div>
+	<script>
+		//计算图片的真实大小，如果超过编辑区域，则进行限制
+		var resizePicWidth = function(pic_width){
+			var imgs = document.getElementsByTagName("img");
+            var j=0;
+			for(var i=0;i<imgs.length;i++){
+                var realWidth;	//真实的宽度
+                var realHeight;		//真实的高度
+                //这里做下说明，$("<img/>")这里是创建一个临时的img标签，类似js创建一个new Image()对象！
+				var newImg = new Image();
+				newImg.onload=function() {
+                    realWidth = imgs[j].width;
+                    realHeight = imgs[j].height;
+                    //如果真实的宽度大于规定的宽度就按照100%显示
+                    if(realWidth>=pic_width){
+						imgs[j].style.width=(pic_width) + "px";
+                    } else{//如果小于浏览器的宽度按照原尺寸显示
+						imgs[j].style.width=realWidth+'px';
+                    }
+                    j++;
+                }
+				newImg.src=imgs[j].src;
+			}
+
+		}
+		var currentNode = null;
+		window.onscroll=function(){
+            var h = document.getElementById("top_end").getBoundingClientRect().top;
+            if(h<=0){
+				document.getElementById("sin_navi_id").className='sin_navi sin_navi_nomove';
+				document.getElementById("sin_content_id").className='sin_content sin_content_mar';
+            }else{
+                document.getElementById("sin_navi_id").className='sin_navi';
+                document.getElementById("sin_content_id").className='sin_content';
+            }
+            comLayout();
+            var arr= new Array();
+            var index = 0;
+			var sinTargets = getClass("h2","sin_target");
+			for(var i=0;i<sinTargets.length;i++){
+                var th = sinTargets[i].getBoundingClientRect().top - 80;	                if(th<=0){
+                    arr[index] = new Array();
+                    arr[index][0] = sinTargets[i].getAttribute("id");
+                    arr[index][1] = th;
+                    index++;
+                }
+			}
+
+            var curr = bubbleSort(arr);
+            if(curr!=null && curr!=currentNode){
+				var oldCurrIds = getClass("li","sin_navi_current");
+                if(oldCurrIds && oldCurrIds[0]){
+                    var oid=oldCurrIds[0].getAttribute("id");
+                    document.getElementById(oid).className=" ";
+                }
+				document.getElementById("navi_"+curr).className="sin_navi_current";
+                currentNode = curr;
+            }
+        }
+		
+		
+	    window.onresize = function(){
+            comLayout();
+		}
+
+        var ch = document.getElementById("sin_navi_id").offsetHeight;
+
+	    function comLayout() {
+	        var h = document.documentElement.clientHeight;
+	    	if(ch<h){
+	    		return;
+	    	}
+		    var i = document.getElementById("bottom_begin").getBoundingClientRect().top;
+	        if(i<h){
+                document.getElementById("sin_navi_id").style.height=(i+"px");
+		   	}else{
+                document.getElementById("sin_navi_id").style.height=(h+"px");
+		   	}
+	    }
+	    
+	    function bubbleSort(arr){
+	    	var i= arr.length;
+	    	if(i<=0){
+	    		return null;
+	    	}
+	    	var j;
+			var tempExchangVal;
+			while(i>0){
+				for(j=0;j<i-1;j++){
+					if(arr[j][1] < arr[j+1][1]){
+						tempExchangVal=arr[j];
+						arr[j]=arr[j+1];
+						arr[j+1]=tempExchangVal;
+					}
+				}
+				i--;
+			}
+			return arr[0][0];
+		}
+	    comLayout();
+	    resizePicWidth(680);
+
+        function getClass(tagname, className) { //tagname指元素，className指class的值
+            //判断浏览器是否支持getElementsByClassName，如果支持就直接的用
+            if (document.getElementsByClassName) {
+                return document.getElementsByClassName(className);
+            }
+            else {    //当浏览器不支持getElementsByClassName的时候用下面的方法
+                var tagname = document.getElementsByTagName(tagname);  //获取指定元素
+                var tagnameAll = [];     //这个数组用于存储所有符合条件的元素
+                for (var i = 0; i < tagname.length; i++) {     //遍历获得的元素
+                    if (tagname[i].className == className) {     //如果获得的元素中的class的值等于指定的类名，就赋值给tagnameAll
+                        tagnameAll[tagnameAll.length] = tagname[i];
+                    }
+                }
+                return tagnameAll;
+            }
+        }
+	</script>
+</body>
+</html>	
+<!-- Generated by OsChina.NET (init:0[ms],page:228[ms],ip:112.74.156.222) -->

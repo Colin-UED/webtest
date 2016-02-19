@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery带缩略图的全屏幻灯片图片切换代码_js代码</title>
+<meta name="keywords" content="jquery特效,图片切换,幻灯片,全屏,带缩略图的幻灯片" />
+<meta name="description" content="jQuery带缩略图的全屏幻灯片图片切换代码。" />
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="banner">
+
+	<div class="index_b_hero">
+		<div class="hero-wrap">
+			<ul class="heros">
+				<li class="hero">
+					<a href="#">
+						<img class="thumb" src="images/img01.jpg" />
+					</a>
+				</li>
+				<li class="hero"><a href="#"><img class="thumb" src="images/img02.jpg" /></a></li>
+				<li class="hero"><a href="#"><img class="thumb" src="images/img03.jpg" /></a></li>
+				<li class="hero"><a href="#"><img class="thumb" src="images/img04.jpg" /></a></li>
+				<li class="hero"><a href="#"><img class="thumb" src="images/img05.jpg" /></a></li>
+				<li class="hero"><a href="#"><img class="thumb" src="images/img06.jpg" /></a></li>
+				<li class="hero"><a href="#"><img class="thumb" src="images/img07.jpg" /></a></li>
+			</ul>
+		</div>
+		<div class="helper">
+			<div class="mask-left"></div>
+			<div class="mask-right"></div>
+			<a href="javascript:;" class="page_btn prev"></a>
+			<a href="javascript:;" class="page_btn next"></a>
+		</div>
+	</div>
+	
+	<div id="lt_ss_tus" class="little_img">
+		<ul class="small_list">
+			<li class="on">
+				<img id="0" src="images/img01.jpg" height="65" width="162">
+				<div class="bg"></div>
+			</li>
+			<li>
+				<img id="1" src="images/img02.jpg" height="65" width="162">
+				<div class="bg"></div>
+			</li>
+			<li>
+				<img id="2" src="images/img03.jpg" height="65" width="162">
+				<div class="bg"></div>
+			</li>
+			<li>
+				<img id="3" src="images/img04.jpg" height="65" width="162">
+				<div class="bg"></div>
+			</li>
+			<li>
+				<img id="4" src="images/img05.jpg" height="65" width="162">
+				<div class="bg"></div>
+			</li>
+			<li>
+				<img id="5" src="images/img06.jpg" height="65" width="162">
+				<div class="bg"></div>
+			</li>
+			<li class="last">
+				<img id="6" src="images/img07.jpg" height="65" width="162">
+				<div class="bg"></div>
+			</li>
+		</ul>
+	</div>
+	
+</div>
+
+</body>
+</html>
+<script src="js/jquery.js"></script>
+<script src="js/index.js"></script>

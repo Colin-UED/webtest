@@ -1,0 +1,19 @@
+/*顶部输入框部分*/
+$("#inputSearch").focus(
+    function(){
+        if($(this).val()==this.defaultValue){
+            $(this).val("");
+        }
+    }
+).blur(
+    function(){
+        if($(this).val()==""){
+            $(this).val(this.defaultValue);
+        }
+    }
+).keyup(function(e){
+        if(e.which==13){
+            alert("您输入的内容，现在开始检索")
+        }
+});
+/*导航掉*/

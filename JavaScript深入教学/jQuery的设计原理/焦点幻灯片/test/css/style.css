@@ -1,0 +1,29 @@
+body,div,ul,li{margin:0;padding:0;}
+ul{list-style:none;}
+img{border:0;}
+
+.banner{position:relative;zoom:1;overflow:hidden;}
+.index_b_hero{position:relative;margin:auto;width:1200px;height:480px;}
+.index_b_hero img {width:1200px;height:480px;}
+.index_b_hero .heros{width:1200px;height:480px;}
+.index_b_hero .hero-wrap{position:absolute;overflow:visible;}
+.index_b_hero .page_btn{position:absolute;top:210px;z-index:366;width:22px;height:40px;}
+.index_b_hero .prev{left:-50px;background:url(../images/custom_left.png);}
+.index_b_hero .next{right:-50px;background:url(../images/custom_right.png);}
+.index_b_hero .hero {position:absolute;top:0;left:0;z-index:1;width:1200px;height:480px;overflow:hidden;}
+.index_b_hero .mask-left,#index_b_hero .mask-right{position:absolute;top:0;left:0;z-index:1;width:1200px;height:480px;overflow:hidden;background:#000;filter:alpha(Opacity=30);opacity:.3;}
+.index_b_hero .mask-left{left:-1200px;}
+.index_b_hero .mask-right{left:1200px;}
+.little_img{position:absolute;bottom:0;z-index:50;width:100%;height:93px;background:url(../images/txtbg7.png);}
+.small_list{margin:0 auto;padding:14px 0;width:1200px;overflow:hidden;}
+.small_list li{position:relative;float:left;margin-right:11px;width:162px;height:65px;cursor:pointer;}
+.small_list li.last{margin-right:0;}
+.small_list li img{width:162px;height:65px;}
+.small_list li .bg{display:none;position:absolute;top:0;left:0;width:160px;height:63px;border:1px solid #fff;background:url(../images/txtbg7.png);}
+.small_list li.on .bg{display:block;}
+
+/*
+本代码由js代码收集并编辑整理;
+尊重他人劳动成果;
+转载请保留js代码链接 - www.jsdaima.com
+*/

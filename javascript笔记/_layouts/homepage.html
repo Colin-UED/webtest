@@ -1,0 +1,33 @@
+{% include pagehead.html %}
+{% include header.html %}
+
+<article class="bookIndex">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1>{{ page.title }}</h1>
+
+<p>英文标题：JavaScript Standards Reference Guide</p>
+
+<p>作者：　　<a href="http://www.ruanyifeng.com">阮一峰</a></p>
+
+<p>授权方式：<a href="/introduction/license.html">创意共享“署名-非商业性使用”许可证</a></p>
+
+<aside class="annoucement">
+
+<p>重要说明：本书正在持续修改之中，大部分章节都没有写完，正式发布还需要一段时间。所有内容随时可能发生变动，目前还不适合转载。（2014年12月）</p>
+
+</aside> 
+
+{% include toc.html %}
+	
+{{ content }}
+    </div>
+  </div>
+</article>
+
+{% include footer.html %}
+
+</body>
+</html>

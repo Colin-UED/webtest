@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Document</title>
+    <style>
+        *{margin:0px;padding:0px; list-style:none;}
+        .cont{ width:100%; height:350px; position:relative; overflow:hidden }
+        .bottom{ width:830px; margin:0px auto;height:350px; position:relative}
+        .new{ width:3500px; position:absolute;height:350px; left:0px; }
+        .new img{ float:left;}
+        .prev{ position:absolute; width:54px; height:54px; top:50%; margin-top:-27px;left:-63px; z-index:14; cursor:pointer}
+        .next{ position:absolute; width:54px; height:54px; top:50%; margin-top:-27px;right:-63px;z-index:14; cursor:pointer}
+        .bgleft{ position:absolute; background:rgba(0,0,0,0.5); left:-830px; z-index:9; width:830px; height:350px;}
+        .bgright{position:absolute; background:rgba(0,0,0,0.5); right:-830px; z-index:9; width:830px; height:350px;}
+
+        .but{width:97px; background:rgba(0,0,0,0.5); position:absolute;bottom:10px;left:0px;right:0px; margin:0px auto;border-radius:5px;padding:5px;}
+        .but li{width:10px; height:10px;border:1px solid #fff; list-style-type:none; float:left;margin:0px 5px;border-radius:50%;cursor:pointer;}
+        .but li.hover{background:#fff}
+    </style>
+</head>
+<body>
+<div class="cont">
+    <div class="bottom">
+        <div class="new">
+            <img src="images/zzsc1.jpg" />
+            <img src="images/zzsc2.jpg" />
+            <img src="images/zzsc3.jpg" />
+            <img src="images/zzsc4.jpg" />
+        </div>
+        <div class="prev"><img src="images/left.png" /></div>
+        <div class="next"><img src="images/right.png" /></div>
+        <div class="bgleft"></div>
+        <div class="bgright"></div>
+    </div>
+    <div class="but">
+        <ul>
+            <li class="hover"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+    var _index=0;
+    $(".new").prepend($(".new img:last"));
+    $(".new").css("left","-830px");
+    $(".but ul li").click(function(){
+        if($(this).index()>=_index){
+            _index=$(this).index()+1;
+            $(this).addClass("hover").siblings().removeClass("hover");
+            $(".new").animate({'left':-830*2+'px'},500,function(){
+                $(".new").css('left','-830px').append($(".new img:first"));
+            });
+            console.log("true")
+        }else{
+            _index=$(this).index()+1;
+            $(this).addClass("hover").siblings().removeClass("hover");
+            $(".new").animate({'left':0+'px'},500,function(){
+                $(".new").css('left','-830px').prepend($(".new img:last"));
+            });
+            console.log("false")
+        }
+    });
+
+    //左右按钮点击
+
+    $(".next").click(function(){
+        _index++
+        if(_index>3){_index=0}
+        $(".but ul li").eq(_index).addClass("hover").siblings().removeClass("hover")
+        $(".new").stop().animate({'left':-830*2+'px'},500,function(){
+            $(".new").append($(".new img:first")).css('left','-830px');
+        });
+    });
+
+    $(".prev").click(function(){
+        _index--
+        if(_index<0){_index=3}
+        $(".but ul li").eq(_index).addClass("hover").siblings().removeClass("hover")
+        $(".new").prepend($(".new img:last"));
+        $(".new").css('left',-830*2+'px').stop().animate({left:"-830px"},500);
+    });
+
+
+</script>
+
+

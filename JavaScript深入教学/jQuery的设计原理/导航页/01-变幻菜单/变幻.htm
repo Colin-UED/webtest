@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <title>变幻菜单</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul, li {
+            list-style: none
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        #top {
+            width: 950px;
+            height: 25px;
+            background: orange;
+            margin: 125px auto 0;
+        }
+
+        #top .top-nav {
+            height: 25px;
+            border-bottom: 8px solid #DC4E1B;
+        }
+
+        #top .top-nav li {
+            height: 25px;
+            line-height: 25px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        #top .top-nav li a {
+            display: block;
+            padding: 0 10px;
+            position: relative;
+        }
+
+        #top .top-nav li a span {
+            display: block
+        }
+
+        #top .top-nav li:hover a {
+            top: -25px;
+            left: 0;
+            background: #DC4E1B;
+        }
+    </style>
+</head>
+<body>
+<div id="top">
+    <ul class="top-nav">
+        <li><a href="#">首页<span>Home</span></a></li>
+        <li><a href="#">课程大厅<span>Course</span></a></li>
+        <li><a href="#">学习中心<span>Learn</span></a></li>
+        <li><a href="#">关于我们<span>About</span></a></li>
+    </ul>
+
+</body>
+</html>

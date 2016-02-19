@@ -1,0 +1,55 @@
+<header class="top-bar" id="header">
+
+<div class="fixed">
+
+<nav class="top-bar">
+<ul>
+<!-- Title Area -->
+	<li class="name has-dropdown">
+	<h1><a href="/">{{ site.sitename }} </a></h1>
+		<ul class="dropdown">
+			{% for chapter in site.chapters %}
+			<li><a href="/#{{chapter}}">{{site.[chapter]}}</a></li>
+			{% endfor %}
+		</ul>
+	</li>
+</ul>
+
+<section>
+
+{% if page.category != nil %}
+<ul class="left">
+<li class="divider"></li>
+<li class="has-dropdown"><a class="active" href="#"> {{ site.[page.category] }} </a><ul class="dropdown">
+{% for article in site.pages %}
+{% if article.category == page.category %}
+{% if article.url == page.url %}
+<li class="active"><a href="#">{{ article.title }}</a></li>
+{% else %}
+<li><a href="{{article.url}}">{{ article.title }}</a></li>
+{% endif %}
+{% endif %}
+{% endfor %}
+</ul></li>
+<li class="divider"></li>
+<li class="has-dropdown nav-3"><a href="#"> {{ page.title }}</a><ul class="dropdown">
+</ul></li>
+</ul>
+{% endif %}
+
+<ul class="right">
+	<li class="divider"></li>
+	<li>
+		<a href="https://github.com/ruanyf/jstutorial" target="_blank">GitHub <i class="foundicon-edit"></i></a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">TOP <i class="foundicon-up-arrow"></i></a>
+	</li>
+</ul>
+
+</section>
+
+</nav>  
+</div>
+</header>
